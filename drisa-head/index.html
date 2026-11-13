@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Drisa Head · UV Maps</title>
+<meta content="Official DRISA HEAD UV maps for deriving on IMVU: mask, eyebrows and lashes at 512 × 512, usage rules and mesh protection." name="description"/>
+<meta content="#0e070a" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Drisa Head · UV maps for deriving on IMVU" property="og:title"/>
+<meta content="Mask, eyebrows and lashes at 512 × 512. Pick a piece, style the lines and download." property="og:description"/>
+<meta content="https://lucasdam321.github.io/drisa-head/og.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e070a'/%3E%3Cpath d='M9 7h7.5a9 9 0 0 1 0 18H9z' fill='none' stroke='%23e6bd8f' stroke-width='2'/%3E%3C/svg%3E" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,400..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Sans:wght@400..600&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout: a couture tech pack. Masthead hero beside a live cutting table, then a three-column map studio, then the terms. */
+:root{
+  --ink:#0e070a; --table:#160b10; --panel:#1d0f15; --panel2:#27141c;
+  --hair:rgba(244,235,230,.11); --hair2:rgba(244,235,230,.24);
+  --chalk:#f4ebe6; --dim:#bda8aa; --faint:#8a7477;
+  --wine:#8a1c35; --wine-hi:#e04a70; --brass:#e6bd8f;
+  --ok:#8fdcb0; --no:#ff8585;
+  --display:"Bodoni Moda","Didot","Bodoni MT","Playfair Display",Georgia,serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono","SF Mono",Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;position:relative;background:var(--ink);color:var(--chalk);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:absolute;inset:0 0 auto 0;height:1200px;pointer-events:none;z-index:0;
+  background:radial-gradient(900px 640px at 84% 2%,rgba(138,28,53,.46),transparent 66%),radial-gradient(720px 520px at 0% 40%,rgba(138,28,53,.18),transparent 66%)}
+a{color:inherit}
+p{margin:0}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:30;background:rgba(14,7,10,.74);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+.bar .wrap{display:flex;align-items:center;gap:24px;min-height:56px}
+.mark{font:500 13px var(--mono);letter-spacing:.2em;text-decoration:none}
+.mark i{font-style:normal;color:var(--brass)}
+.bar nav{display:flex;gap:22px;margin-left:auto}
+.bar nav a{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--dim);padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.bar nav a:hover{color:var(--chalk);border-color:var(--brass)}
+.lang{display:flex;border:1px solid var(--hair2)}
+.lang button{font:500 11.5px var(--mono);letter-spacing:.1em;background:none;border:0;color:var(--dim);padding:7px 10px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--chalk);color:var(--ink)}
+@media(max-width:820px){.bar nav{display:none}.lang{margin-left:auto}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(28px,5vw,76px);align-items:center;padding-block:clamp(36px,6.5vw,84px)}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.17em;text-transform:uppercase;color:var(--brass);margin:0}
+.mast{font:italic 500 clamp(74px,12.6vw,178px)/.84 var(--display);letter-spacing:-.025em;margin:.16em 0 .2em;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.mast b{display:block;font-weight:500}
+.mast .wire{color:transparent;-webkit-text-stroke:1.3px var(--brass);padding-left:.44em}
+.lede{color:var(--dim);font-size:clamp(16px,1.35vw,18.5px);max-width:54ch;text-wrap:pretty}
+.specs{display:flex;flex-wrap:wrap;gap:0;margin:28px 0 30px;border-top:1px solid var(--hair2);border-bottom:1px solid var(--hair2)}
+.specs div{padding:13px 26px 13px 0;margin-right:26px;border-right:1px solid var(--hair)}
+.specs div:last-child{border:0;margin:0}
+.specs dt{font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.specs dd{margin:3px 0 0;font:500 15px var(--mono);font-variant-numeric:tabular-nums}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:500 12.5px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:15px 20px;border:1px solid var(--hair2);background:transparent;color:var(--chalk);cursor:pointer;text-decoration:none;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.btn:hover{border-color:var(--chalk)}
+.btn:active{transform:translateY(1px)}
+.btn.pri{background:var(--brass);border-color:var(--brass);color:#1c0e08}
+.btn.pri:hover{background:#f4d6b2;border-color:#f4d6b2}
+.btn[aria-disabled=true]{opacity:.55}
+.btn svg{width:15px;height:15px;flex:none}
+.stage{perspective:1200px;animation:rise .9s .08s cubic-bezier(.2,.8,.2,1) both}
+.table{position:relative;border:1px solid var(--hair2);background:linear-gradient(155deg,rgba(44,22,31,.92),rgba(20,10,15,.94));will-change:transform;box-shadow:0 40px 90px -40px rgba(0,0,0,.9)}
+.table::before,.table::after{content:"";position:absolute;width:16px;height:16px;border:1px solid var(--brass);pointer-events:none}
+.table::before{left:-9px;top:-9px;border-right:0;border-bottom:0}
+.table::after{right:-9px;bottom:-9px;border-left:0;border-top:0}
+.table canvas{display:block;width:100%;aspect-ratio:1;cursor:crosshair;touch-action:pan-y}
+.tag{position:absolute;left:-1px;top:-1px;transform:translateY(-100%);font:500 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--brass);color:#1c0e08;padding:5px 10px;white-space:nowrap}
+.read{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;font:400 12px var(--mono);color:var(--dim);border-top:1px solid var(--hair2);padding:10px 14px;font-variant-numeric:tabular-nums}
+.read b{color:var(--chalk);font-weight:500}
+.read span:last-child{margin-left:auto;color:var(--faint)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.stage{max-width:560px}}
+
+/* sections */
+.sec{padding-block:clamp(52px,8vw,108px);border-top:1px solid var(--hair)}
+.h2{font:italic 500 clamp(36px,5.1vw,66px)/1.02 var(--display);letter-spacing:-.012em;margin:.3em 0 .32em;text-wrap:balance;max-width:20ch}
+.sec>.lede{max-width:62ch}
+
+/* studio */
+.studio{display:grid;grid-template-columns:232px minmax(0,1fr) 304px;gap:18px;margin-top:34px;align-items:start}
+.pieces{display:grid;gap:10px}
+.piece{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:center;width:100%;text-align:left;font:inherit;background:var(--panel);border:1px solid var(--hair);color:inherit;padding:10px;cursor:pointer;transition:border-color .2s,background .25s,transform .2s}
+.piece:hover{border-color:var(--hair2);transform:translateX(3px)}
+.piece[aria-pressed=true]{border-color:var(--brass);background:linear-gradient(115deg,rgba(138,28,53,.55),var(--panel) 72%)}
+.piece canvas{width:64px;height:64px;background:var(--ink);display:block}
+.piece b{display:block;font-weight:600;line-height:1.25}
+.piece small{display:block;font:400 11.5px var(--mono);color:var(--dim);margin-top:3px;font-variant-numeric:tabular-nums}
+.viewer{position:relative;border:1px solid var(--hair2);aspect-ratio:1;overflow:hidden;background:#140a0e}
+.viewer.chk{background-color:#1a0f14;background-image:conic-gradient(#25161e 25%,transparent 0 50%,#25161e 0 75%,transparent 0);background-size:26px 26px}
+.viewer.chk.light{background-color:#efe7e3;background-image:conic-gradient(#d8cdc8 25%,transparent 0 50%,#d8cdc8 0 75%,transparent 0)}
+.viewer.drop{outline:2px dashed var(--brass);outline-offset:-8px}
+.viewer canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+.viewer canvas:active{cursor:grabbing}
+.vtag{position:absolute;left:0;top:0;font:500 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--brass);color:#1c0e08;padding:5px 10px;pointer-events:none}
+.vhint{position:absolute;left:10px;bottom:10px;font:400 11px var(--mono);color:var(--chalk);background:rgba(14,7,10,.72);padding:5px 8px;pointer-events:none}
+.zoom{position:absolute;right:10px;bottom:10px;display:flex;gap:6px}
+.zoom button{width:36px;height:36px;font:500 17px/1 var(--mono);background:rgba(14,7,10,.8);border:1px solid var(--hair2);color:var(--chalk);cursor:pointer}
+.zoom button:hover{border-color:var(--brass);color:var(--brass)}
+.zoom output{min-width:54px;display:grid;place-items:center;font:500 11.5px var(--mono);background:rgba(14,7,10,.8);border:1px solid var(--hair2);font-variant-numeric:tabular-nums}
+.ctl{background:var(--panel);border:1px solid var(--hair);padding:18px;display:grid;gap:20px}
+.lab{font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:0 0 10px;display:flex;justify-content:space-between}
+.lab output{color:var(--chalk);letter-spacing:.04em}
+.sws{display:flex;flex-wrap:wrap;gap:11px}
+.sw{position:relative;width:30px;height:30px;border-radius:50%;border:1px solid var(--hair2);padding:0;cursor:pointer;background:var(--c)}
+.sw[aria-pressed=true]{outline:2px solid var(--brass);outline-offset:3px}
+.sw.none{background:conic-gradient(#3a2831 25%,#1a0f14 0 50%,#3a2831 0 75%,#1a0f14 0);background-size:12px 12px}
+.sw.any{background:conic-gradient(#ff5d73,#ffd166,#7bdcb5,#59c3ff,#b388ff,#ff5d73);overflow:hidden}
+.sw.any input{position:absolute;inset:-6px;width:150%;height:150%;opacity:0;cursor:pointer}
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--hair2)}
+.seg button{font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:none;border:0;color:var(--dim);padding:10px 6px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--chalk);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--brass);margin:0}
+.tex{display:grid;gap:10px}
+.tex p{font-size:12.5px;color:var(--faint);line-height:1.45}
+.tex .btn{padding:11px 14px;font-size:11.5px}
+.agree{display:flex;gap:11px;align-items:flex-start;padding:13px;border:1px dashed var(--hair2);font-size:14px;line-height:1.4;cursor:pointer}
+.agree input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--brass);flex:none}
+.agree.pulse{animation:pulse .9s 2}
+@keyframes pulse{50%{border-color:var(--brass);background:rgba(230,189,143,.14)}}
+.dl{display:grid;gap:9px}
+@media(max-width:1060px){.studio{grid-template-columns:minmax(0,1fr) 304px}.pieces{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr))}.piece:hover{transform:none}}
+@media(max-width:860px){.pieces{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.studio{grid-template-columns:1fr}}
+@media(max-width:480px){.piece{grid-template-columns:44px minmax(0,1fr);gap:9px;padding:8px}.piece canvas{width:44px;height:44px}.piece b{font-size:14px;overflow-wrap:anywhere}.piece small{font-size:10.5px}}
+
+/* derive */
+.steps{list-style:none;padding:0;margin:44px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));counter-reset:s}
+.steps li{position:relative;padding:28px 22px 0 0;border-top:1px solid var(--hair2);counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;top:-16px;left:0;width:32px;height:32px;display:grid;place-items:center;background:var(--ink);border:1px solid var(--brass);color:var(--brass);font:500 12.5px var(--mono);border-radius:50%}
+.steps b{display:block;font-size:17px;font-weight:600;margin-bottom:6px}
+.steps p{color:var(--dim);font-size:15px}
+.tblwrap{overflow-x:auto;margin-top:40px;border:1px solid var(--hair)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px}
+th{font:500 10.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);text-align:left;padding:12px 18px;border-bottom:1px solid var(--hair2)}
+td{padding:14px 18px;border-bottom:1px solid var(--hair)}
+tr:last-child td{border-bottom:0}
+td:first-child,td:nth-child(3){font-family:var(--mono);font-variant-numeric:tabular-nums}
+td:first-child{color:var(--brass);font-weight:500}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:rgba(244,235,230,.04)}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:44px}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* rules */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.rcol{background:var(--panel);border:1px solid var(--hair)}
+.rcol h3{font:500 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:15px 20px;margin:0;border-bottom:1px solid var(--hair2)}
+.can h3{color:var(--ok)}.cant h3{color:var(--no)}
+.rcol ul{list-style:none;margin:0;padding:0}
+.rcol li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;padding:15px 20px;border-bottom:1px solid var(--hair);transition:background .2s,padding-left .2s}
+.rcol li:last-child{border-bottom:0}
+.rcol li:hover{background:rgba(244,235,230,.045);padding-left:26px}
+.rcol li::before{font:500 15px/1.5 var(--mono)}
+.can li::before{content:"✓";color:var(--ok)}
+.cant li::before{content:"✕";color:var(--no)}
+.pact{margin-top:18px;display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;padding:22px 24px;border:1px solid var(--hair2);background:linear-gradient(100deg,rgba(138,28,53,.42),rgba(138,28,53,.06) 64%)}
+.pact p{font-size:17px;max-width:44ch}
+.stampbox{display:flex;align-items:center;gap:18px;min-height:52px}
+.stamp{display:inline-block;font:500 13px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--brass);border:2px solid var(--brass);padding:10px 16px;transform:rotate(-5deg);border-radius:3px;box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 4px var(--brass);font-variant-numeric:tabular-nums}
+.stamp.in{animation:stamp .5s cubic-bezier(.2,1.5,.4,1)}
+@keyframes stamp{from{transform:rotate(-16deg) scale(2.3);opacity:0}}
+.undo{font:400 12px var(--mono);color:var(--dim);background:none;border:0;text-decoration:underline;cursor:pointer;padding:6px}
+@media(max-width:820px){.rules{grid-template-columns:1fr}}
+
+/* protection */
+.guard{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
+.gcard{background:var(--panel);border:1px solid var(--hair);transition:border-color .25s,transform .25s}
+.gcard:hover{border-color:var(--hair2);transform:translateY(-4px)}
+.gcard h3{font-size:19px;font-weight:600;margin:0 0 8px}
+.gcard div:last-child{padding:20px}
+.gcard p{color:var(--dim);font-size:15px}
+.fig{position:relative;height:150px;overflow:hidden;border-bottom:1px solid var(--hair);background:var(--table)}
+.fig small{position:absolute;left:12px;top:10px;font:500 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.sig{display:grid;place-items:center;background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:22px 22px;background-position:center}
+.sig span{display:block;width:100%;text-align:center;font:500 clamp(17px,2vw,23px) var(--mono);letter-spacing:.3em;color:var(--brass);-webkit-mask-image:linear-gradient(90deg,transparent 38%,#000 50%,transparent 62%);mask-image:linear-gradient(90deg,transparent 38%,#000 50%,transparent 62%);-webkit-mask-size:300% 100%;mask-size:300% 100%;animation:scan 4.6s linear infinite}
+.sig::after{content:"";position:absolute;top:0;bottom:0;left:-50%;width:2px;background:var(--wine-hi);box-shadow:0 0 20px 5px rgba(224,74,112,.5);animation:scanline 4.6s linear infinite}
+@keyframes scan{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes scanline{to{left:150%}}
+.hash{display:grid;place-items:center;padding:30px 18px 14px}
+.hash code{display:block;max-width:22ch;font:500 13px/1.7 var(--mono);letter-spacing:.14em;color:var(--dim);overflow-wrap:anywhere;text-align:center;background:linear-gradient(90deg,var(--dim) 0 40%,var(--brass) 50%,var(--dim) 60% 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s linear infinite}
+@keyframes sheen{from{background-position:100% 0}to{background-position:0 0}}
+.cmp canvas{position:absolute;left:50%;top:50%;width:128px;height:128px;margin:-60px 0 0 -64px}
+.cmp .b{animation:align 5.2s ease-in-out infinite}
+.cmp::after{content:"100%";position:absolute;right:14px;bottom:10px;font:500 13px var(--mono);color:var(--ok);animation:match 5.2s ease-in-out infinite}
+@keyframes align{0%,100%{transform:translate(30px,-8px) rotate(8deg);opacity:.85}42%,82%{transform:none;opacity:1}}
+@keyframes match{0%,38%,90%,100%{opacity:0}46%,80%{opacity:1}}
+@media(max-width:900px){.guard{grid-template-columns:1fr}}
+
+/* theft */
+.track{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));counter-reset:t}
+.track li{position:relative;padding:28px 22px 0 0;border-top:1px solid var(--wine-hi);counter-increment:t}
+.track li::before{content:counter(t);position:absolute;top:-16px;left:0;width:32px;height:32px;display:grid;place-items:center;background:var(--ink);border:1px solid var(--wine-hi);color:var(--wine-hi);font:500 12.5px var(--mono);border-radius:50%;transition:background .2s,color .2s}
+.track li:hover::before{background:var(--wine-hi);color:var(--ink)}
+.track b{display:block;font-size:17px;font-weight:600;margin-bottom:6px}
+.track p{color:var(--dim);font-size:15px}
+.law{margin-top:36px;padding:18px 22px;border-left:2px solid var(--wine-hi);background:var(--panel);max-width:74ch}
+.src{margin-top:14px;font:400 12px var(--mono);color:var(--faint)}
+@media(max-width:860px){.track{grid-template-columns:1fr 1fr;row-gap:44px}}
+@media(max-width:520px){.track{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--hair);padding-block:30px 44px;color:var(--faint);font:400 12px var(--mono);letter-spacing:.04em}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,24px);opacity:0;pointer-events:none;z-index:50;background:var(--chalk);color:var(--ink);font:500 13px var(--mono);padding:12px 18px;max-width:calc(100vw - 32px);text-align:center;transition:opacity .25s,transform .25s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+<a class="mark" href="#topo">DRISA<i>@</i>IMVU</a>
+<nav aria-label="Seções">
+<a data-t="nav.maps" href="#mapas">Maps</a>
+<a data-t="nav.derive" href="#derivar">How to derive</a>
+<a data-t="nav.rules" href="#regras">Rules</a>
+<a data-t="nav.guard" href="#protecao">Protection</a>
+</nav>
+<div aria-label="Idioma / Language" class="lang" role="group">
+<button aria-pressed="true" data-lang="en" type="button">EN</button>
+<button aria-pressed="false" data-lang="pt" type="button">PT</button>
+</div>
+</div></header>
+<main id="topo">
+<div class="wrap">
+<section class="hero">
+<div>
+<p class="eyebrow" data-t="hero.eyebrow">Tech pack · Mesh head · IMVU</p>
+<h1 class="mast"><b>Drisa</b><b class="wire">Head</b></h1>
+<p class="lede" data-t="hero.lede">Official UV maps for deriving the DRISA HEAD on IMVU. Pick a piece, style the lines your way and download at 512 × 512.</p>
+<dl class="specs">
+<div><dt data-t="spec.maps">Maps</dt><dd data-t="spec.maps.v">4 pieces</dd></div>
+<div><dt data-t="spec.size">Size</dt><dd>512 × 512 px</dd></div>
+<div><dt data-t="spec.mat">Materials</dt><dd>250 · 253 · 255 · 254</dd></div>
+</dl>
+<div class="cta">
+<button class="btn pri" data-act="zip" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 16 16"><path d="M8 2v8m0 0L4.5 6.5M8 10l3.5-3.5M2.5 13.5h11"></path></svg><span data-t="hero.cta1">Download all 4 maps (.zip)</span></button>
+<a class="btn" data-t="hero.cta2" href="#mapas">Open the studio</a>
+</div>
+</div>
+<div class="stage">
+<div class="table" id="tablewrap">
+<span class="tag" data-t="hero.tag">Piece 01 · Mask · Mat 250</span>
+<canvas aria-label="Mapa UV da máscara" id="table" role="img"></canvas>
+<div class="read"><span>U <b id="ru">0.500</b></span><span>V <b id="rv">0.500</b></span><span>X <b id="rx">256</b></span><span>Y <b id="ry">256</b> px</span><span data-t="hero.hint">Hover to read the coordinates</span></div>
+</div>
+</div>
+</section>
+<section class="sec" id="mapas">
+<p class="eyebrow" data-t="studio.eyebrow">Map studio</p>
+<h2 class="h2" data-t="studio.h2">Pick a piece. Style the lines your way.</h2>
+<p class="lede" data-t="studio.lede">What you see here is what lands in the file: a 512 × 512 PNG, ready to open in your editor.</p>
+<div class="studio">
+<div class="pieces" id="pieces"></div>
+<div class="viewer chk" id="viewer">
+<canvas aria-label="Mapa UV" id="view" role="img"></canvas>
+<span class="vtag" id="vtag"></span>
+<span class="vhint" data-t="view.hint">Drag to pan · double-click to zoom</span>
+<div class="zoom"><button aria-label="Menos zoom" data-z="out" type="button">−</button><output id="zval">100%</output><button aria-label="Mais zoom" data-z="in" type="button">+</button><button aria-label="Zoom 100%" data-z="reset" type="button">⟲</button></div>
+</div>
+<div class="ctl">
+<div><p class="lab" data-t="ctl.line">Line color</p>
+<div class="sws" id="lineSw">
+<button aria-label="Branco" aria-pressed="true" class="sw" data-c="#ffffff" style="--c:#ffffff" type="button"></button>
+<button aria-label="Preto" aria-pressed="false" class="sw" data-c="#000000" style="--c:#000000" type="button"></button>
+<button aria-label="Rosa" aria-pressed="false" class="sw" data-c="#ff2d6f" style="--c:#ff2d6f" type="button"></button>
+<button aria-label="Ciano" aria-pressed="false" class="sw" data-c="#19e3ff" style="--c:#19e3ff" type="button"></button>
+<button aria-label="Amarelo" aria-pressed="false" class="sw" data-c="#ffe14d" style="--c:#ffe14d" type="button"></button>
+<label aria-label="Outra cor" class="sw any"><input id="lineAny" type="color" value="#e6bd8f"/></label>
+</div>
+</div>
+<div><p class="lab" data-t="ctl.bg">Background</p>
+<div class="sws" id="bgSw">
+<button aria-label="Transparente" aria-pressed="true" class="sw none" data-c="transparent" type="button"></button>
+<button aria-label="Preto" aria-pressed="false" class="sw" data-c="#000000" style="--c:#000000" type="button"></button>
+<button aria-label="Branco" aria-pressed="false" class="sw" data-c="#ffffff" style="--c:#ffffff" type="button"></button>
+<button aria-label="Cinza" aria-pressed="false" class="sw" data-c="#808080" style="--c:#808080" type="button"></button>
+<label aria-label="Outra cor" class="sw any"><input id="bgAny" type="color" value="#8a1c35"/></label>
+</div>
+</div>
+<div><p class="lab"><span data-t="ctl.width">Thickness</span><output id="wval">1.0 px</output></p>
+<input aria-label="Espessura da linha" id="width" max="3" min="0.5" step="0.25" type="range" value="1"/>
+</div>
+<div><p class="lab" data-t="ctl.mesh">Lines</p>
+<div class="seg" id="meshSeg"><button aria-pressed="true" data-d="0" data-t="seg.clean" type="button">Clean</button><button aria-pressed="false" data-d="1" data-t="seg.all" type="button">All</button></div>
+</div>
+<div class="tex"><p class="lab" data-t="ctl.tex">Test my texture</p>
+<label class="btn"><input accept="image/*" hidden="" id="texFile" type="file"/><span data-t="tex.btn">Choose image</span></label>
+<p data-t="tex.hint">Or drop the image onto the map. It never leaves your computer.</p>
+<div hidden="" id="texOn">
+<p class="lab"><span data-t="tex.op">Line opacity</span><output id="oval">100%</output></p>
+<input aria-label="Opacidade das linhas" id="wireA" max="1" min="0.1" step="0.05" type="range" value="1"/>
+<button class="undo" data-t="tex.rm" id="texRm" type="button">Remove texture</button>
+</div>
+</div>
+<label class="agree" id="agreeRow"><input id="agree" type="checkbox"/><span data-t="agree">I have read and accept the <a href="#regras">usage rules</a></span></label>
+<div class="dl">
+<button class="btn pri" data-act="png" type="button"><span data-t="dl.png">Download PNG 512 × 512</span></button>
+<button class="btn" data-act="copy" type="button"><span data-t="dl.copy">Copy image</span></button>
+<button class="btn" data-act="zip" type="button"><span data-t="dl.zip">Download all 4 (.zip)</span></button>
+</div>
+</div>
+</div>
+</section>
+<section class="sec" id="derivar">
+<p class="eyebrow" data-t="derive.eyebrow">How to derive</p>
+<h2 class="h2" data-t="derive.h2">From map to catalog in four steps.</h2>
+<ol class="steps">
+<li><b data-t="s1.t">Download the maps</b><p data-t="s1.p">Accept the rules and download the four pieces at 512 × 512.</p></li>
+<li><b data-t="s2.t">Paint your texture</b><p data-t="s2.p">Use the map as a guide in your editor. Keep 512 × 512 and make both color and opacity.</p></li>
+<li><b data-t="s3.t">Derive in IMVU Studio</b><p data-t="s3.p">Derive from the DRISA HEAD product and replace the textures of the materials in the table below.</p></li>
+<li><b data-t="s4.t">Test and publish</b><p data-t="s4.p">Check it on the avatar, adjust the opacity and submit it to the catalog.</p></li>
+</ol>
+<div class="tblwrap"><table>
+<thead><tr><th>Material</th><th data-t="th.piece">Piece</th><th data-t="th.size">Size</th><th data-t="th.tex">Textures</th></tr></thead>
+<tbody>
+<tr><td>250</td><td data-t="m250">Mask: face and makeup</td><td>512 × 512</td><td data-t="coa">Color + opacity</td></tr>
+<tr><td>253</td><td data-t="m253">Eyebrows</td><td>512 × 512</td><td data-t="coa">Color + opacity</td></tr>
+<tr><td>255</td><td data-t="m255">Upper lashes</td><td>512 × 512</td><td data-t="coa">Color + opacity</td></tr>
+<tr><td>254</td><td data-t="m254">Lower lashes</td><td>512 × 512</td><td data-t="coa">Color + opacity</td></tr>
+</tbody>
+</table></div>
+</section>
+<section class="sec" id="regras">
+<p class="eyebrow" data-t="rules.eyebrow">Usage rules</p>
+<h2 class="h2" data-t="rules.h2">The textures are yours. The mesh is mine.</h2>
+<p class="lede" data-t="rules.lede">Create and sell as much as you like on top of this head, as long as it is by derivation in the IMVU catalog.</p>
+<div class="rules">
+<div class="rcol can"><h3 data-t="can.h">You may</h3><ul>
+<li data-t="can.1">Derive this head through the IMVU catalog and sell your versions there.</li>
+<li data-t="can.2">Create and sell your own textures: mask, makeup, eyebrows and lashes.</li>
+<li data-t="can.3">Use the maps on this page to paint your textures.</li>
+<li data-t="can.4">Promote your derived products with your own images.</li>
+</ul></div>
+<div class="rcol cant"><h3 data-t="cant.h">You may not</h3><ul>
+<li data-t="cant.1">Extract, copy or re-upload the mesh as .chkn, .xmf, .obj or any other format.</li>
+<li data-t="cant.2">Publish the mesh as your own creation or as a non-derived product.</li>
+<li data-t="cant.3">Sell, trade or share the mesh and its files outside the IMVU catalog.</li>
+<li data-t="cant.4">Use the mesh in other games or platforms.</li>
+<li data-t="cant.5">Edit the mesh to hide where it came from.</li>
+<li data-t="cant.6">Resell these maps as a pack or resource.</li>
+</ul></div>
+</div>
+<div class="pact">
+<p data-t="pact.text">By downloading the maps you agree to these rules.</p>
+<div class="stampbox" id="stampbox"></div>
+</div>
+</section>
+<section class="sec" id="protecao">
+<p class="eyebrow" data-t="guard.eyebrow">Protection</p>
+<h2 class="h2" data-t="guard.h2">Every head leaves here identified.</h2>
+<div class="guard">
+<article class="gcard"><div aria-hidden="true" class="fig sig"><span>DRISA@IMVU</span></div><div><h3 data-t="g1.t">Hidden signature</h3><p data-t="g1.p">Every head carries a signature hidden inside the mesh. It does not show in the game, but it travels with the file wherever it goes.</p></div></article>
+<article class="gcard"><div aria-hidden="true" class="fig hash"><small>SHA-256</small><code>17af261d2087ee0d994b390c74b96f4a</code></div><div><h3 data-t="g2.t">Authorship record</h3><p data-t="g2.p">I keep the dated source files of the mesh. The original file has a unique fingerprint, and any copy can be checked against it.</p></div></article>
+<article class="gcard"><div aria-hidden="true" class="fig cmp"><canvas id="cmpA"></canvas><canvas class="b" id="cmpB"></canvas></div><div><h3 data-t="g3.t">Point-by-point comparison</h3><p data-t="g3.p">A suspicious mesh is compared with the original, vertex by vertex. Edited copies usually keep the same structure, and the comparison shows it.</p></div></article>
+</div>
+</section>
+<section class="sec" id="roubo">
+<p class="eyebrow" data-t="theft.eyebrow">If it is stolen</p>
+<h2 class="h2" data-t="theft.h2">What happens to anyone who copies the mesh.</h2>
+<ol class="track">
+<li><b data-t="t1.t">Identification</b><p data-t="t1.p">The hidden signature and the mesh comparison confirm the copy.</p></li>
+<li><b data-t="t2.t">DMCA report</b><p data-t="t2.p">I send IMVU a formal copyright report with the proof of authorship.</p></li>
+<li><b data-t="t3.t">Product removal</b><p data-t="t3.p">With a valid report, IMVU removes or disables the product.</p></li>
+<li><b data-t="t4.t">Account at risk</b><p data-t="t4.p">IMVU may close accounts that repeat infringements. A permanently disabled account is unlikely to withdraw its earnings.</p></li>
+</ol>
+<p class="law" data-t="theft.law">I may also seek compensation in court under copyright law (Law 9.610/98 in Brazil).</p>
+<p class="src"><a data-t="theft.src" href="https://support.imvu.com/support/solutions/articles/154000197231-faq-about-dmca" rel="noopener" target="_blank">Source: IMVU DMCA FAQ</a></p>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><span data-t="foot.1">© 2026 Drisa. Original mesh.</span><span data-t="foot.2">Derivation through the IMVU catalog only.</span></div></footer>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<noscript><div class="wrap" style="padding-block:24px"><p>This page uses JavaScript to draw the maps. Direct files: <a href="maps/drisa-head_mascara_mat250_512_branco.png">mask</a>, <a href="maps/drisa-head_sobrancelhas_mat253_512_branco.png">eyebrows</a>, <a href="maps/drisa-head_cilios-cima_mat255_512_branco.png">upper lashes</a>, <a href="maps/drisa-head_cilios-baixo_mat254_512_branco.png">lower lashes</a>.</p></div></noscript>
+<script>
+(()=>{'use strict';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* ---------- map data: UV vertices (0..4095) and edge lists, packed as uint16 ---------- */
+const META=[{"id":"mask","mat":250,"slug":"mascara","nv":898,"nb":68,"ne":2060,"nd":498,"tris":1728},{"id":"brow","mat":253,"slug":"sobrancelhas","nv":222,"nb":72,"ne":403,"nd":113,"tris":368},{"id":"lashTop","mat":255,"slug":"cilios-cima","nv":228,"nb":92,"ne":338,"nd":156,"tris":360},{"id":"lashBot","mat":254,"slug":"cilios-baixo","nv":216,"nb":88,"ne":327,"nd":139,"tris":340}];
+const B64="AAjEDwAIRg8UCOoIFAjBCAII8A0CCD4OEwjgCRMIfAkSCG8EEwhAChMIcgoYCHcGGAj/BgMIrAwYCPYFEgiNCg4IrwoDCC4LBggFCwoI1AoDCNMNAQi9DhYI4gcDCJwNAwg1DQMIkQsDCBwMBAhNAgsIZAMDCHgMAwiADLYNwAxpDoULygu7B04MjAdEDNYHuwsDCJ8K2QvZClIMtgpWDIoKGgzwCrQLggoiC9gK0gpWC5QLQwnNCUIJkQl9CfMJcAkZCgwMagMmDaUDmwx2BLMLhASJDVUHpA2cBgAOswbsDZoHtQrKBz4LzwcrCw8Ilgr/B4oIiQ+eCAsPrAjnCK8IGQl+CIsKVwiHCsIIXwroCIUK6glyDAMKbwynCYkMjQlyDDoLkAfPC3UHSwmMCikJigoRCXUKPgl4CjUJxA2WCZUNlgnQDR8J8w2vCVkN/AkhDfMJSQ0dCvcMtwkoDcQIjAmtCOwJvQhNCRMIMQkMCQUK9gguCpEINAocCW0JdQnICdUM2wbMDNIGywhDCmMIagrVDE4G8gwYBvsMggbaDKcGkAhLBocItgVfCnAMNApnDHoI6gp/CLMKLQlfCPoI+gebCT4I/wndCPUIRwsRCUoLogg7C6gJXgkACuMJ0gnoCXUJsQlFCfkKWAlfC4MJkwtWDFEHqAweB7QMRwcsCnMGowo3BtcIBQsgCVIOmgiBDpcIEg5cCisAOQ0OAK8OAQsuD/gIuw67CoAJWgotCVEKcwk2CuENOQW8DmcEgg7CBegNDAZ8Cn8NEwrpDf4Jjg1WCi0NugkHB9gJzQbOCPcPpgjwD5kJtw9yCbsPAAj9D1wNiwXzDC4FXA23BKwI2g2iCMANtw2BDEgOJwz1DbEMYQ0yDZYNSg0EDb0NBw3fDVANjw3hCxkJlAunCGoMpwipDCMJiAkyB4oJbAeZCXYHgQlXByoNew1+DQANiQqGDJAKlAx+CoQMdg6JCywOJQxdDu4L0Q22DDsJ7ggoCUoJjwuzDkEL4Q6MCkkP3woFD8gIrAipCEkIrwyABqAMrgZYDFMGegwZBv4JjA9LCjkPPwtdCYcKWglzCuMILgv6COwIHAXSCQEFFgnQBdwIdgaLCNcHFwhyB3wIVwd4CNoGtgqRBz4KiwcvCkwHmwpPB8EI5ga/CGsH+wiGB8sM1g1XCikMhQpjDMcI6gdBCe8GcQkZB3IJcgdACYQHkQoyBjsLFgYwCykGDwj7A4YI5APHCIQEGwmqDe4IYQipDN8HugyJBxMNjwebDlgLxw4/CtgOWAqHCtwJKAqtCRkKRAl+CdgIFg9SBmgPtQRdD4AFJQ/HBvgOigk8DekHiA37BzUNgQjWDCUINgnQDkgOhwtUDpkKxQ2lC7oNsAoFD00IqQ5rCegM/Ab/DLoGJw2tBgwNGQc5DpgJjw3CCeYNqAhIDSIJAApyBhkKJgawCuwF/gjDCn8JmQpoD4EGag5eCCgLXQenC1YHVgz2BK0L9gTOCvIEwQpLBMQIKQ1UD/QCAA7lA5ENCgZ9DhgH+QjyBlINMgZfDZwGJQ1dBrQJvQYcC2IMfAt+DEUK5QsiCmgLwAnzCqsJZAunCsEM5AwnDRINcAyOC0gILAw7CCMKhQyyDPYGaQwhB7YIiQu0CBAM1wr2DBQLSQ3oCf8ONAlrD5sJjQ6qCuwNnAkpDiAKYQ50DFUMRAwaDbwL5Qz8CzIM4AzJBtYM7wZDDREC6Ql3CiQKyAraCTMK0Qk2CsgJAAqJCUIKsQlzBrUJLgYmCs8FGwyuCdoMygmUCSEKrQlsCs8JUgpcCZUKnglnCnoJdwrDCU8Kbwq8DFEKfwz9CSkKXQpMCjMKtAcNCs4HqAj+Aj8JiwJmCYMDHgppAp0KWwNUDB8Opgy6Df8LyQ2vCVoEwAtUDkwMRw7fCnkOqAj2AQ4MYA4CC1UITAoxCH4JBwbuCXwFewyBCyMNlAsLDagKugmmB7kJywdUDJgKRwqDCMoKpAhmC1gKZAuiDdoJhAfUCVAH2gt9CxsN1wWRCXYHwQmTB3IJhAGyCJYNUgkMDTEJfA08CR0MFQlwDJ4IcwwXDDwH/gm+C7QJtguuCT8MTgyEBswLSgaYCmcFFQlrBtgLKwZbC9wF9QvuBSgMXQViC1QFvQyLBUMK9AxTDQkH6QqfBcsJ0Aw2CmwMzAlqDPQJUgyTDNsFkAn4BnkJwwZ9CW4MPgmeDLcIpQyiCHUMJwlzDEUKaAweChAMXAqEDBIKdAxuCnsMhwp0DF0KawxzCnwMZQlzBmoLFwLNC8wACQyvBYULpAWZClUBPgmgCwAI8g8XCDMFFAiKCBUIQQgACDoASQLADJYBhQtlBLsH4QOMB+sD1gd0BAMIaAXZCy4FUgxRBVYMfQUaDBoFtAuMBSILPAXSCrkElAvkBs0J5QaRCaoG8wm3BhkKFQRqA/wCpQOUA3UEfASBBKYCVQeLApsGLwKzBkMCmgd6BcoH8QTPBwQFDwiZBf8HdgeJD2IHCw97B+cIeAcZCaIHiwrMB4cKZQdfCj0HhQodBnIMBAZvDGAGiQx6BnIM9QSQB2AEdQfbBowK/QaKChYHdQrpBngK0AbEDXAGlQ1vBtAN5QbzDVgGWQ0LBiENFAZJDeoF9wxQBigNYweMCXoH7AlqB00JGwcFCjEHLgqWBzQKCwdtCbIGyAlaA9sGYwPSBlwHQwrEB2oKWgNNBj0DGAY0A4IGVQOnBp8HSgapB7cFqAVwDNMFZwyWB+oKmwezCgEHXwg1B/oHlAY+CCwG3QgSB0cL9gZKC2UHOwt+Bl4JIgbjCVEG6AmyBrEJywb5Cq8GXwuEBpML2QNRB4cDHgd7A0cHAwZzBowFNwY3BwUL4wZSDmkHgQ5tBxIOowUrAMYCDgBRAQEL0QD4CEQBuwqnBloK+gZRCrQGNgpOAjkFcwFnBK0BwgVHAgwGigV/DfIF6Q0IBo4NsQUtDXUGBwdXBs0GMQf3D1oH8A9nBrcPjQa7D9MCiwU8AywF0wK4BFkH2g1kB8ANTwKBDLsBJwwMArEMoQIyDWkCSg38Ar0N+ALfDa8Cjw1JBBwJmgSmCMQDpwiAAyIJpwYyB6UGbAeWBnYHrgZXB9UCew2BAgANfgWGDHcFlAyJBYQMiQGJC9MBJQyjAe4LLgK2DO0G7Qj/BkoJcASzDr4E4Q5zBUkPIQUFD2AHrAiCB0kIgAOABo8DrgbXA1MGtQMZBgEGjA+1BTkP6QRcCaAFWQm5BeMI/wT5CEMHHAVdBgEFGQfQBVMHdgaiB9cHswdXB7cH2gZ5BZEH8QWLBwAGTAeUBU8HbgfmBnAHawc0B4YHNAPWDbAFKQyCBWMMZwfpB+4G7wa+BhkHvQZyB+8GhAeeBTIG9AQWBv8EKQaYB+QDYgeEBOsGqg0/B2EIhgPfB3UDiQccA48HaAFYC0ABPwopAVgKmgXbCfoFsAkPBkQJrQbZCPUAUgaXALUEogCABdsAxwYLAYoJ8gLqB6cC+wf4AoEIWQMlCMwG0A6/AYcLvAGZCkgCpQtdArAKBwFNCGsBawlHA/wGMAO6BggDrQYiAxkH4wGYCZICwglDAqgI4AIjCS8GcgYWBiYGfwXsBRoHwwqgBpkKlwCBBrcBXggHBV0HhwRWB9kD9wSCBPYEYQXxBG4FTQRDBykNqwD0Ah8C5QOeAgoGpwEYBzYH8gbdAjIG0AKcBgoDXQZ7Br0G7ARiDI4EfgzCBeUL5QVoC1IG8wpcBmQLYAXBDCEDJw34AnAMoQRICAMEOwjkBYUMfQP2BsYDIQdRB4kLUwcQDDEF9gzzBEkNGQb/DswGaw9oBo0OWwXsDWgGKQ7jBWEOmQNVDMQDGg1NBOUMEgQyDE8DyQZZA+8GxwIRAjUGdwrxBckKSQYzClMGNgpcBgAKngZCCn4GcwZ6Bi4GCQbPBQkErglIA8oJkwYhCncGbApUBlIKxAaVCogGZwqrBncKYQZPCpgFvAy2BX8MIwYqCsAFTQr8BbQHIgbOB2kH/gLMBosCtQaDA+4FaQKCBVsDrAMfDlsDug0FBMkNfwZaBEAEVA6zA0cOIwV5Dl4H9gHxA2AOLQVVCOMFMQixBgcGQQZ8BZgDgQvvApQLDwOoCnUGpgd2BssHxwOYCukFgwhkBaMItgRYCqIEog1VBoQHWwZQBzgEfQsUA9cFngZ2B24GkweQBoQBVQeWDbUGDA3WBnwNywYdDPIGcAxpB3MMGAQ8BwkGvgtTBrYLWQY/DOEDhAZjBEoGlwVnBRoHawZXBCsG1ATcBToE7gUHBF0FzQRUBXIDiwXEBfQM3AIJB0YFnwU8BtAM0QVsDDsGagwTBlIMnAPbBZ4G+Aa2BsMGigZuDMkGngxQB6UMZQd1DOAGcwzCBWgM6QUQDKsFhAz1BXQMmQV7DIAFdAyqBWsMlAV8DMoGcwaiBBcCMwTMACYErwWqBKQFagVVAckGoAsDCGgMUghkDKgIXgzrCF8MJwlhDGUJZQwyCWYMmAljDBwKZAz2CWIMOgpoDF8JaAySCWwMuAlxDOAJdQzvCGcMrAhoDAUKdQwpCmoMAwhuDFwIbQx7Cm8MegpqDIgKhAx8CnAMaApuDIMKpwx2CqQMTwpqDE0KcwzGCWEMtQdkDF8HXgzgBmEMHAdfDNUGZgyiBmUMbwZjDBEGYgzrBWQMzQVoDKgGaAx1BmwMJwZ1DE8GcQwYB2cMWwdoDAIGdQzeBWoMqwdtDI0FagyMBW8MfwWEDIsFcAyfBW4MhAWnDJEFpAy4BWoMugVzDEEGYQwvC+8GAAXvBiAAigCGALUBsgCzAB8AswAfACAAsgDcAL4AvwD4ABMBiQATAdwAaQG/AMcA9wD4AL4AaQGYAJsA9wAcAZgAnACbAMcAiQCKAIcAHAGGAIcAtwEgArUBHAJHAkgCtgFIArYBtwFHAnACUwJUAosCpgIfAqYCcAL8AlQCXAKKAosCUwL8Ai4CMQKKAq8CnAAuAjECXAIfAiACHQKvAhwCHQIdAIQBgwGEAUgAoQFFAJcBgwGdAZgBnQGgAaEBmAGlAR4AoAGnAagBpAGnAZcBqAGkAaUBRQBIAB0AFwMWAxcD3wE0A9wBKgMWAzADKwMwAzMDNAMrAzgDHgAzAzoDOwM3AzoDKgM7AzcDOAPcAd8BEgFQARIBRAFEAVABRAFRAVABUQElACkAKQAqACoAKAElACgB4ACqAYwBqgEgAYwB4AAgAeoAgQF/AYEB6gB/AaEAfwF2AHkAdgC7ALsAvAB5ALwAGwBoARsAXAEcAFwB5QCKAYoBjQHmAIoB5QDmAG4BegFuAXMBcwF6AXMBdgF2AXoBMwAXATMANAA0ABcBNAAYARcBGAEMARQBOAAUATgA/AD8AAwBTwDqAE8AUABQAOoAUABTABgBGQE0ABoBGQEaAQAAAQAAAD0AAQA9AD0APgABAD4ABgFCAX4AQgF+AAYBfgB/AH8ABgEEAAUABQCFAAQAhQCFAKAAgADkAIAADgGBAOQAgACBAHcA8wB3AFkB8gBZAfIA8wBqAXUBawF1AWsBdAF0AXUBYwF3AT4BYwE+AT8BPwF3AfAA8QDvAPAA7wDxAIgA7wCIAPEAKQAsACkAJQEsACUBJQEmASwAJgF6ACkBKQFEASkBRQFEAUUBYAB5AGAASAF4AEgBeAB5AHYA9QB2APQAdgDzAPMA9ABLAaoBSwFsAWwBqgFsAYwBQQFCATEBQgFhAEEBYQAxAcsAdAHLAHUBywDMAMwAdQErAHYBKwAsACwAegEGAFkAWABZAAcAWAAGAAcASgFLAQ8BSwEPAUwBSwFMAQgA6QAIALIBzQCyAc0A6QBWAaYBtgCmAbYAVgFWAVcBVwGmASAAtwCKALcAiACKAIgAtwCqAKsAqgCsAKwArQAyADMAMQAyADEANAAaAEUDRANFAxoARAOEAUUDRQNGA4QBRgMQAEIADwBCAA8AEABBAEIAgAGeAUcAngFHAJYBgAGWAV4AZABeAGMAXQBjAF0AXgCGAH4BfgG1AWgBtQFoAX4BngAXAZ4AnwAzAJ8AdACwATMBsAF0ADMBWABaAC0AWAAtAC4ALgBaAJcADgGXACQBgACXAHoAggBzAIIAowC5ALkA7wDvAAABowAAASYAtQAmACsBtQArAScAtQAmACcA1QDWANYA1wDXANgA1QDYAHABcwFuAW8BbwFwATYBPwEmAT8BPwFAASYBQAGOAJ0AnQAeAZEAHgGOAJEAggFIA0cDSAOCAUcDRgNHA4QBRwPQAIwB0AAgAdAA2QDZACABwgDRABYA0QAWALQBwgC0AWUAZgBmAJoBkgGaARcBkAEYAZABGAGRAewA/gDsAC8BrAAvAawA/gC7APUAuwDrAEkA1QDYABUBSQAVAeAA4QDgAJwBnAGqAakAsgABAQMBAQEKAQoBCwEDAQsBIAC4ALcAuQC4ALkAHwC6ALMAugAgALoAmgA4AZoANwHIADcBFwAYABgAGwEbAX8BFwB/AbgAugBuABEBbQBuAG0AggCCABEBZwAjAWcABwEHAQgBCAEjAagAqQCoANwAOQA8ADkAWgE8AFoBWgFbASoBhwGGAYcBfACHAXwAKgEDAXABogCjAAABAgGiAAIB2gDbAHAA2wDbACAB2QDaAHAAcQDaAN8AcADfAG8AcACQAa0BmgGtAZABkgFRAVUBUAFVAVMBVQFQAVMBvQC+AL0AwAC/AMAAaADDAGIAaABlAMMALgAvAC0ALwAtADAALwAwAF0AjABjAIwAWwF9AXEBfQFbAXEBZQBnAGcAaADBAMIAuwDBAMIA6wAiACMAIQAjACEAJADpAGQBzQDOAM4AZAGzAbQBwQCzAScBowGGAaMBJwGGAd0AJwHdAKMBbwD1AHIA9QByAPQAygDLAHIAywDKAPQA+gAEAYkA+gCJAAQBiQD5APkABAHxAPoAiQDxAJ4BSgNJA0oDngFJA0gASwNJA0sDSABJA/sA/AA1APwANQA4AC0BPQE9AT4BLAE+ASwBLQH9AA0BDAENAf0ADAH8AP0ApACmAKYAugCkALoApAC4AGkA1ADUANkAaQDQAHoAEgF6ABEBbwDrAN8A6wCjAKQAJQE1ASYBNQE1ATYB5ADmAIEA5gDWAHgBeAF5AdcAeQH5ABMBrwCwAK4ArwCuALEAsACxAPAA+gD2APkABAEFAQQBFAEFARQBFAEfAQQBHwH2AB8BBQEKAQoBDAELAA4ACwBpAA4AaQBpAGoADgBqAAUAFQAVAIQAhACFAF4BYAFeAWQBGgFkARoBYAFGAE0DTANNA0YATAOXAU4DlwFMAxEAEgARAHUAbQB1ABIAbQDJAE0BqgBNAaoAyQDJAMwAkAD3AI8A9wCPAJAANgA3ADUANgA1ADcAkgCVAJUANQErATUBlQArAY8AHAEcAR0BjwAdAS4BLwGrAC4BqwAvAU4AjABDAIwAQwBjAE0BcwFNAXYByQB2Ac8AbAHPAIwBzwDQAFEAOwGTADsBUQCTAJMAlABRAJQAPABqATwAawFbAWsBKgBFASgBKQFDAE0AQwBEAEQATQBNAE4AOQDVANYAWgFMAE0ASwBMAEsATgAlACcAJQAmACcAKAAlACgAzQDPAGoAzQBqAM8AeAF8AbAAfAGwAHgBsAB9AXgBfQEyAEMBMQBDAUMBqwExAKsBgwD/AIMAhAA+AIQAPgD/AAYBBwEGAQgBBgEJAQgBCQEiAH0AIgBKACEASgAJAF4AWQBeAAYACQAqACsAKQArAOgAXgHoAOkA/wA4Af8ANwE3ATkB/wA5AS4AXwBAAF8AQABaAIIBsAE0AYIBMwE0AZ8AHQGOAJ8AjgCPAGEBZQG9AGUBvQBmAWEBZgGtAE0BTQFOAa0ATgGOAJAAkACRAH8ACQF/AO0ApQCnAKYApwClAKYApAClADUAlAE1AO4A7gD7ADYAIgE2AB4BHgEhASEBIgElASsBJgAlASYAKQAyAB0BHQFDARwBQwFYAVkBRAFYAUQBWQFFAVkB8AABAfAABQH7AP0A+wD+AP0A/gCsAP0AfQB/AGsAVwFrAKYBbABXAWUBZwHAAGcBdwBYAUYBWAFEAUYBewCwAXsAfAB8ALABdAB7AHcAeAB4AEYBEAFMARABlQGoAGYBZgFpAUYBUQFSAIMAgwA7AVEAUgBEAEwASwBSAVIBVAFLAFQBTABSARIBUgERAVIBXQF+AV0BaAFcAV0BVgCWAVYAMAFWAFcAVwCWAT8AQAACAD8AAwA/AAIAAwAtAW8BAgFvAQIBAwF+ADEBfgAyATEBMgFiAWMBYwFlAWEBYgFJAVMBSQFVAUkBTwGRAa0BkQGuAa0BrgEvAGAAXwBgAMgAZwEUAKEAFAAXAPYA+ACgAKEAoADqAD8AwQA/ALwA5QCOAY0BjgGNAY8BQgBkAAoAZAAKAA8AVABVAFMAVABTAFUATwBSAFIAoABSAIUAxQCNAcUAiQHJAMoAygDyAPIAdgEAAQEBsQDiAOIAfQHiAHEBIwDsAOwA7QDsAO4A7QDuAEABegEpASoBegB7AHsAKgEJAAoACQBkAJIAkwCSAJQAxwDIAMAAyABmACMBZgB7AVwAXQBZAFwAiwBJAYsAVAFTAVQBKwBZAXEAcgFxAGsBWwFyAWcBdwE9AUABqwGsAawBrwGrAa8BXwGvAV8BqwFKAaoBUABRAE8AUQCnAGEBpwCoAFIBUwGtAA0BdAB6AHMAdACdAHsBIQF7AVQAVgBTAFcAOQE7AXEAcgBxAHQBRABuAEEARABBAG4ARAARAZMAPAE5ATwB4ADiAOEA4gCxAOEAGQAzARoANAEZABoAhwGIAYIBiAFOAXABPQA4AT0AmQCZADgB2wDjAJgAmQCYAJoAmgCbAEMAZAB7AZIBLQBcAFwAjQAwAI0AWgBbAEAAWwACAFsAbwBxAC8ATwFgAE8BSAFPAY4BrgGPAa4BjwGtAdEA3wBsADABMAFXAUYAMAE6AEkAOQA6AKYAqQA7AC4BJAAuASQALwHDAMUAwwDEAMUAxgCWAK4ArgCbAZYAmwGWAK8ARgCWAUYARwBVAJQAVQCVAJUAkwGDAUgDSANPA4MBTwOIAVADTwNQA4gBTwMkAZsBlgCXANEA0wDTANoAKAGGAScBKAEoASoBIQA6ACQAOgA6ADsACQGUASIBlAEIASIBmQCcAJkAsQGcALEBrgDhAFAAlAAjAC8BDgEPAeQADwHkABABIQEjAZkBUgNRA1IDmQFRA50BUANQA1EDnQFRAwcBQQFoAEEBxgCPAaEBSgNKA1MDoQFTA58BVANTA1QDnwFTA3YAeADlABABXwC8AAsBDQE8AWcBNwE8AYsBlQGRAZUBrwB8AXkBfAF9ADIBfQCFATIBhQGaAMcAWgF4AWEAYgBiAMQAxACJAYkBigE6AXcBOgFnAToBPAEsAWIBjgGVAQ0AGAANAJ8BGwGfAVQAkwEuAWoBqwBqAXEBcgHiAHIB4gDjAOMAcgGYAVIDUgNVA5gBVQOiAVUDVQNWA6IBVgMQABMAEABuACgA3QAoACcBKADeAJAA9gCLAI0AMABJAZkBowGIAZkBiAGjAXMAMwF1ADMBcwB1AAcBQgHOABkBzgBtAW0BiwEZAYsBngCSAR4AWANXA1gDHgBXA58BWANUA1gDtAC1ACcAtAC1ALYAtAC2ALUAVgFWAZMBqwDMACcA3gC0AN4ApwFZA1kDWgOnAVoDpwFbA1oDWwNZA1wDpwFcA2sAXQNcA10DWwNeA6cBXgPeAKkBtACpAV4DXwOpAV8DxgCaAWUAxgCoAV0DqAFgA2wATgNOA2ADbABgAzgAHwE3AB8BPQFuAUcBVQFHAU8BRwFIARIAEwATAG0ANgE6ATYBdwFxAOMAagCyAZsBnAEkAZwBJAFKASUAJwFXAIEBgAGBATsAagF1AIIA3gCiAd0AogGiAakBNgCUAUwBbQFMAYsBNwCQADcAkQCSADYBkgA6Ae4ACQEZAZEBhwBDAVgAXAAEABQAFACgADEAYAGnAGIBQwGsAYcArAFBAEMA5wDoAAgA5wAIAOgAzwBtAWwBbQGdAJ4AXQFfAV0BXgFfAWABXAFeAegAXAEcAOgAHADnAIYArAGGAK8BSQBKABUBFgFKABYBfgGvAeEAmwEiAO0ABwBaAAcAWwAbAYABngGfAaIApACiAKUA0wDUAAwA1AAMANIA0gDTAEoAhQEWAYUBqQFhA6UBVgNWA2EDpQFhA04AVAFOAIsARgFHAUcBUQFfAX4BUwCBAQsBTgFMAWwB4ADjAIwAjQALANQACwAMAEYBSAGTADoBAACxAVYAkwFWAFYBogAtAQ4BSgEWANIAAQAVABEAGQAhAEkARQBNA00DYgNFAGIDRwBLA0sDYgNHAGIDPwCzAQMAswE2AJEAKwGTAVwAjAA5ADsApQAsAXwAggGmALMAmQGiAaUC1wKlAuMC1wLjAtcC5ALjAuQCwAHBAbwBwAHBAbsCvAG7Ah8DPQN0Aj0DswIfA3QCswISAxQDfQIUA30CEgM2AhIDDAJQAgwCDwJQAlECDwJRAhsA+wIbAO8CHADvAnkCHQMdAyADegIdA3kCegIBAwYDAQMNAwYDDQMGAwkDygHLAcoBqgLLAaoCywGrAqoCqwLPAacCnwKnAs8BjwKPAp8C5gHnAeYBfQLnAX0C5wHqAasCrALLAa0CrAKtAgAA1AEBANQB1AHVAQEA1QEUAtUCmQLVAhQCmQIUAhUCFQKZAgUAGwIEABsCGwI1AhYCeAIWAqECFwJ4AhYCFwINAuwCDQKGAoUC7AKFAoYC/QIIA/4CCAP+AgcDBwMIA9EC9gL2AgoD0QLSAtICCgOCAoMCgwKEAoIChAIeAoICHgKEAsABuALAAcMBwwG4ArgCuQLDAbkCEAK8ArwC1wK8AtgC1wLYAvYB2wL2AQ8CDgLbAg4CDwIMAogCDAKHAgwChgKGAocC3gL/At4CPQP/Aj0D/wIfA8QC1QLUAtUC9wHUAvcBxAJgAgcDYAIIA2ACYQJhAggDwgHDAcIBCQPDAQkDwwENA+8B8AEGAPABBwDvAd0C3gKiAt4CogLfAt4C3wIIAHwCsgFiAmICfALpAjkDSwLpAksCOQPpAuoC6gI5A7cBTAIgAkwCHgIgAh4CTAI/AkACPwJBAkECQgLIAckByQHKAcgBygHIAcsBRANjAxoAYwMXA2QDYwNkAxcDYwMPANkBEADZARAA2AHYAdkB3gExAxMDMQPeASkDEwMpA/QB+gH0AfkB8wH5AfMB9AEcAhEDtQERA7UB+wL7AhEDMwKqAsoBMwIzAjQCygE0AgoCQwMKAsYCxgJDA8QB7wHvAfEBxAHFAcUB8QEtAqECLQK3AhYCLQIJAhACCQIYAk4CggI4Ak4CggKTAjgCkwK9AUoCSgK+Ar0BvgK+AUoCvQG+AWoCawJpAmoCawJsAmkCbAIDAwYDAQMCAwIDAwPJAtICuQLSAtIC0wK5AtMCMgKxAiQCMgInArECJAInAhUDZgNlA2YDFQNlAxcDZgNkA2YDZQIfA2UCswJlAm0CbQKzAhYAZgJXAmYCtAFXAvsB/AH8AS0DJQMtA6oCIwOrAiMDqwIkA38CwgJ/ApECQQLCAkECkQJQAogCUAJ+AuABaQJsAqgC4AGoAnQCdQJ0Ai8DLwM9Az4CRwKUAp0ClAKWAp0CngKWAp4CtwFNAkwCTgJNAk4CSAJPArYBTwK3AU8CMALLAjACygJdAsoCGACuAq4CEgMXABIDTQJPAgMCBAIDAqQCAwIYAhgCpAL9AZoC/QG2ApoCmwKbArYCPQI+Aj0CcALQAe0C0AHTAdMB7QLtAu4CvQIaAxkDGgMSAhoDEgK9ApYCAwM3AjgCkwKVAjcClQJuAm8CBgJvAm8CswJtAm4CBgIHAm4CcwIGAnMCBQIGAi0DQAMjA0ADIwMlA+QC6ALjAugC5gLoAuMC5gJSAlMCUgJVAlQCVQL+AVgC+AH+AfsBWALFAcYBxAHGAcQBxwHGAccB8wEiAvkBIgLuAhADBAMQA+4CBAP7Af0B/QH+AVACVgJWAlcCVwJ+ArkBugG4AboBuAG7AXwC9wJiAmMCYwL3ArMBVgK6AjYDugIZAxkDNgNxAroCcQI2AwUCiAIIAogCCAKHAggCYAJfAmACXwKHAh8CjQKNApcCHwKXAh8CjAKMApcChAKNAh8ChAIxA2gDZwNoAzEDZwPfAWgDaANpA98BaQOOAo8CzAGPAswBzwHQAtECwALQAr8C0QK/AsACnwKgApACoAKQAp8CjwKQAjsCTwI5AjsCOQJPAjkCTQJoAm0C/wFoAv8BZQIQAqUCEAKkAgUCfgJzAn4COAI5ArgCyAK5AsgCyALJAngCegIXAnoCCwMMA2oCCwNrAgwDjAKmAkMCRAJEAkUCQwJGAkUCRgKDAo0CiQKMApcCpwKXApgCmAKnAqcCsgKXArICiQKyApgCnQKdAp8CCwD/AQ4A/wH/AQACDgAAAhUAGgIaAhsC8QL3AvEC8wKtAvcCrQLzAt0BawNqA2sD3QFqAyoDawMqA2wDEQALAgMCCwISAAMCPwLgAl4C4AI/Al4CXgJhAiUCigImAooCJQImAswBzQHNAc4BzAHOASgCKwIrAsgCvgLIAisCvgKvArACJQKvAiUCsAJAAsECwQLCAkACwgLlASIC2gEiAtoB+QHgAgYD4AIJA14CCQNkAv8CZAIfA2QCZQIpAs4C6AHOAugBKQIpAioC6AEqAtMB/QLTAf4C7gL+AsEB2AK7AtgC2gHbAdoB5AHbAeQB5AHlAdABaQJqAu0C4gHjAeMB5AHiAeUBvAG+AbwBvQG+Ab8BvAG/AWICZAIAAmICAAJkAkUCDwMLAw8DRQILA0UCEAMLAxADyQHWAtYCPgPIAT4DGQIaAhkCkgLVARoC1QGSApkCmgKZApsCmQKcApsCnAK5ARMCuQHhAbgB4QHwAfQBCQD0AcEBwgHAAcIBewJ8AnsC8QKSAssCkgLKAsoCzAKSAswC1wH1AcUB9QHXAfEBxwIVAxUDQwPGAscCJAI0AjQCsAIkAiUCUgL4AvQC+AJSAvkC9AL5AkIC4ALgAuECQgLhAiQCJgImAicCFQKcAhUCgAI7AjwCOgI8AjoCOwLMAScDzAGBAoECjgLNAbECzQG1ArECtAK0ArUCuAK+Ar0BuAK9AcAByQGwArAC1gKvAtYC1wLrAusC7ALXAuwC2ALsAoMCmAKDApQCjgKQAo4CkQKQApECQQKQAhMCFQIBAuoCAQI5AwIC6gL4AvoCVQL6Ag0C6wLXAtkC2QLrAhECQwMSAkMDEQISAgoCEQINAg4CDgLZAqMC3wKjAigD+QL8Aj0C+QLZAuQCGQLOAukBGQLoAekB2wHjAeUC5wLiAeUC4gHnAuMB5QKlAuUCpALlAvACEQPwAvsC7wLwAu0BKQPtAcMC7QHuAe4BKQPWAdcBAgDWAQMA1gHAAgIDlQICA5UClgIUAsQCFALFAsQCxQL2AvgC9QL2AvQC9QLcAuYC3ALoAtwC4gIkA0ADJANBA0ADQQP1AfYBxgH2AV0C+gIUADYCiQKLAjUCNgI1An0C1gFWAtYBUQJ5AiEDIAMhAyADIgPZAfoBCgD6AeoB6wHrAewB6gHsAeYB6QHpATUC6QEbAloCIANaAhwDXgJfAl8ChQKFAgkDkwKUAkYCdgJ2AhADdgIEA7oBfwJ/AoACfwKBAoACgQLTAg0DvAK9AhACEQIRAr0CCQD6ASgCKQIoAioCXAJdAlUCXQL8AbYC/AEOA/IB8wHwAfIBIQLnAiEC3ALmAucCwgHsAgcC/gIHAgUD7gIFA/oCCgPQAtMCPwNCAz4DPwM+A0ID8gJCA/ICPgPdAj0D5wHoAeYB6AE8AvQCPAI9AuUC5gJCAqACCgIQAgkCCgIyAg4DtAIOA+sB7QHqAe4BzALOAgcCCAIHAgcD2AHbAdsBBALYAQQC2wGkAikCzwLMAs8CdAJ2AnUCdgJGAnUCGQDGAhoAxwIVAxsDGgMbA+ECBgPhAgMD1AEvAtQBywIvAssCbwJ3Ai4CLwIuAjACMAIxAtoB+gEOAyUD8gEjAsQB8gHHASMCWwDxAVsA1wEFAgcCxgHiAvYB4gLbAuICIQNBAyIDQQMiA0ADZgJzAgICwwLDAuoC3QHDAtEB4AHQAdEBOwI+AtIBwQK7AcECuwHCAlgCWgJYAlkCWgJbAiwCQwIsAi4DQwIuAywCRALdASkD3QHeAewBKgLsASsCKwImAxYDbQNlA20DFgNlAxsDbQNtA24DGwNuA7cCLgMsAi0CZgJnAmcCbgK7AhkDugK7ArsCvQK4AdEBuwHRAdEB0gG1AicDnAInA5sCtQKcAC8CsQEvAkMCdQLnASoCugHCAqECogJ4AqICeAKjArQCtgIsA3ADbwNwAywDbwMwA3ADbgNwAzADbgOaAtQC/gHUAlsCIgM0A3EDZwNxAzQDZwMyA3EDcQNyAzIDcgMMAg4CeQKjAvUBUQKeAqACzwL6AsoCzwIeAygDJAMoA0QCDwMMAw8DEwLFAhMCGAPFAhgDMAJcAu0CCwP3AfgB+AFZAlkCHAMcAx0DzQIKA80C+gLNAs8CvwL1AiEDKAMNADIDrgIyA+sBJgPBAv0CQAL9AgQDBQN2AgUDdgJ3AncCBQMrA3MDbwNzAysDbwM1A3QDcwN0AzUDcwMTAAQCEAAEAr8BcQK/AboCvwFyAiYCiQIhAiMCxwHcAiwDNgMbAzYDGwMsAwkCxgILAsYCCQILApoC1QJjAgADYwKsAgADHgOsAh4DMwIlA1cDdQMeAHUDcgN1AzIDdQNJAkoCvgFJAkoCSwJJAksCSgLpAukCJgNAAmECvgFyAkkCcgI6A3YDdgN3AzoDdwN2A3gDOgN4AzoDeQN3A3kDeQN6AwECegM6A3sDeAN7A3ICPANJAjwDPAN8A3sDfANbAi0D+wFbAjsDfQM7A3oDAgJ9A2wDfQMCAmwDzwGyAs4BsgLQAgED2gLoAtoC4gLaAtsCyQLNAskCCgMHAncCsgEAAi4DLwO3Ai8DtwLdArwBugLuARQDEwMUA9IB/QILAhgCcgI1A3ECNQM1AzwDzQEnA98CAAPfAh4DzgEmAs4BJwIoAskCKALNAoECnAKsAiQDHQLWAu8B8gEUADUCyAHzAjwC9QLWAj8DHQI/A9gB2gHnAHsCZAIAA/8CAAMyAjMC8ALxAvAC8gLyAvMC7wLxAnsC7wIcAHsCHAJCAxwCPwPgAeEBqAKpAuEBqQIRA0IDdQIuA7kBgAIHAPEBrgITAzEDMgM3AjkCNwI6AgwAaAJnAmgC0gBnAuEBGAOpAhgDPAN+AzgDfgN0A34DOAN0A+UB5wLlASEC2QLaAtoC5ALyAhED6gEUA54C4QLfAv8CdAJ3AiICIwILAGgC2QLbAikCzQLtASYD7QHpAjcCwAKhAt0CuAHgAdwBfwNqA38D3AFqA94BfwNpA38D3gFpA7MB1gHNAScCvgImA/IBIgLQAdIBOgK/AhICFQM7AkgCLAM1Ax0ARQMdAEQDNAFFAzQBRgODAUcDNAFHA6EBSQNHAEkDRQBMA2wATAOCAU8DnQFPA5gBUQOIAVEDngFTA6ABUwOgAVQDmQFVA6UBVQMNAFgDDQBXA6ABWAOmAVkDpgFaA7YAWgO0AFsDawBZA6gBXAO0AF4DpAFfA2sAYAOXAWADpAFhA6IBYQNGAGIDSABiAx0AYwPHAmMDxwJkAxYDZgPHAmYDNANoA94BaAPcAWsDAgJrAxUDbQMwA20DKwNwAxsDcAMxA3EDMwNxAzMDcgMsA3MDOANzAw0AdQMzA3UDOQN2A0sCdgM5A3cDSQJ4AwECdwM7A3kDSQJ7AzcDfAMBAn0DKgN9AzcDfgM1A34D3QF/A98BfwPmAIADigGAA4kBgAPEAIADYgCAAzEBgAMyAYADhQGAAxYBgAMVAYAD2ACAA9cAgAN5AYADfAGAA5YAgAOXAIADgACAA4EAgAMdA4EDegKBAxcCgQMWAoEDLQKBAywCgQMPA4EDDAOBA2sCgQNsAoEDqAKBA6kCgQMYA4EDxQKBA8QCgQP4AYEDWQKBAxwDgQMlACoA4ACMAaEA6gB5ALsAXAFoARsAHADlAI0BOAAMAVMA6gA0ABkBBACgAOQADgHzAFkBagFrAT4BdwF6AEQBeQBIAfQA9QAxAUEBLAB2AQYAWAAPAUoB6QCyAasArACqAK0AMQAzABAAQQBHAIABYwBkADMAngAtAFoADgEkAXMAegCjAO8A1QDXAG4BcAEmATYBjgAeARYAwgBlAJoBZgCSAZABkQH+AC8B6wD1AEkA2ADhAJwBqQCzAAMBCgG3ALgANwE4AZoAyAAXABsBbQARAQcBIwGpANwAPABbASoBhgEDAW8BCwFwAaIAAAFwANoA2QDbAHEA2wBvAN8AkAGaAb0AvwBiAMMAZQBoAFoBfQFmAGcAuwDCACEAIgAjACQAzQBkAcEAtAFvAHIAcgDKADUA+wAtAT4BaQDZABEBEgGkALkA5ADlANYAeQH4APkArgCwAPYABAEKARQBBQCEAGABZAFMA04DEgB1AKoAzAA3ADgAkgA1AUMATgAoAUUBOQDWAEsATQDOAM8AhAD/AEoAfQAJAFkA6QBeAS4AQAA0AbABjgAdAb0AYQHtAAkB7gCUAR4BIgEBAQUBrQD9AH0AfgAiAH8AawBsAMAAZQF2AHcAeABYAQ8BEAFMAZUBqABpAVIAOwEwAZYBUAFSAQIAQAACAS0BYgFlAU8BVQEvAF8ANwFnAcAAxwAUAH8B9gD3AE8AoAC8AMEAjgGPAQ8AZABQAFUAiQGNAcUAjwHJAMsAygB2AfAAAAGxAH0BIwDtACYBegF6ACoBvgBmAZQAlQAjAXsBXABeAEkBVAEqAFkBawFyAWMBZwE9AT8BSgGcAacAZgENAU4BnQAhAVMAVgCDADkBcQDLAAEBAgHyAPQAOwE8ARkANAGCAYcBTgFzAZkAmgDjACABQgBDAC0AjQCIALkA8AAEAdEA6wBGAGwAOgDVAKYAqAAkADsAxADFAMMAxgBVAJMBlgAkAdMA3wAJASIBaQDPAGcAQQEQAY4BYAC8AAsBDAGLAZEBlQGuAWEAaAAsAWMBDQAbAT4AOAGrAHUBEwBuAN0A3gCQAB8BMACLABkBbQEXAZIBtQCTAYgAiQBrAFwDqQFeA10DYANAAW4BDgCyAYEBlgE7ADwAMgCfACsA8gAvAEkB7gD+AM4AGgExABoBpQBiAYMAhQCeAHsBXgFfAUoAFQEbALUBGwGeAQwA0wBfA2ED1ADaAD0BbwEIASEBRABSAT8AXwCLAIwAYAGrAQAAmQDGAK0BogAsAdEA0gAVAD4AfwGAAREAMwGdAJ8AVgBXAYYBiAHdAJkBvAHBAXQCHwM2An0CDwJQAu8C+wJ5AiADCQMNA88BnwLqAX0CywGsAgQANQJ4AqEChgLsAv0C/gLRAgoDEALXAg8C2wKHAogCxALUAgYA7wGiAt0CsgF8AkACQQI/AkIC3gETA/kB+gHEAfEBoQK3AhACGAI4AoICaQJrAgEDAwO5AskCJAKxAhYAVwL7AS0D/AElAyMDJAORAsICfgKIAuABbAJ1Ai8DPgJIApYCnQJMAk0CygLLAjACXQIXAK4CBAKkApoCtgI+AnAC0wHuAr0CGQOWAgIDngIDAzcCkwIGAm4CbQJvAgcCbwIFAnMCIwMtA1ICVAL4AVgC+wH+Ae0CEAP8Af0BUAJXArgBuQG6AbsBYgL3ArQBVgIFAggCCAJfAswBjgLAAtEC/wFtAqQCpQI5Ak4CeAJ5AmoCDAOLAowCQwJFAokClwKdAqcCBQAaAvMC9wJrA2wDEgALAj8CYQLOAc8BKALIAtoB5QG7ArwC0AFqAuIB5AFjAmQCyAHWAhoCkgLhARMCCQDwAXwC8QLFAdcBxwJDAyQCsAJSAvQCgAKcAjkCOgKBAicDsQK1ApQCmAJCApACEwIUArkBFQIBAgICVQL4AgwCDQIOAusCogKjAt8CKAM9AvwC6QHOAsMCKQPjAuUCAgDXAZUCwAL1AvgC4gLoAsYB9QHKAvoCVQJcAhQAEgOJAooC5gE1AlECVgIhAyIDDwD6AecB7AEcAyADWgIiA14CYAJfAgkDgwKTAkYCEAO6AYACuQINAxACvQJTAvkCKgIrArYCDgPyAfQB3ALnAsEB7AL+AgUD9gL6AtAC0gLdAi8DPAL5AqAC4QIyArQC6gHtARkCzAIHAmAClAKVAoUChwLOAs8CGQDHAhUDGgMvAjACdwKzAtkB2gHEASMCHgJOAoMClwJmAn4C3QECAtEBaQI7Aj0CuwHSAVkCWgJYAlsC7AEmAywCtwJnAnMCnAK1Av8BZAL9AdQCowIhA/YBUQKeAp8CHgMkAygDQQP3Af4BvwL2Ag0ArgLVAcsCQAIIA3ECcgImArICxwEhAqwCAAOqAiUDSgImAx4CHwIBAnkDPAN7A3oDfQPTAgEDEwADAhQDKQPSAdMByQE0AsIBhQLGAdwCgQKRAmMCrQLIAa0COgL1AhkCGwIIAHsCMwIOA/EC8gLhAagCrgIxAwwAZwJ8A34DaAJuAtACAgObArQC2wHlAtYB9QEhAiIC8wI+AwAALwJbAkADNwK/AtIAZgIVANUBEgMTAxEAxgIyAjQC7QHqAhkDGwNxAiwDtABaA6QBXgNJAnYDNwN7A2EAgAOvAIADRAKBA/cBgQPzCusL7w0ICpgJhQibB8MKxAVRCMYEfwrqC0kOQAmrDTQK1g43CIAM+wZqDR4GUQxwA44MCQWVDWoBhA/TAkEPNwI1DoQPjQ25Da8PlwJsCo4BHA2WAEIO7QhKDlkHDw6wBSYOkQMZDjIEjw5/C5EPXgGWC2AOjAejDTwG+wxGByECawf+AxIGdgA9BfUGKAaqBocFqAWqBowI+AXvCFUFMgoZBtsKjQWmC44GTAwZBlgEWwdoABsJEABPC7ICKQgQBbsDawiqAo4GXgA0AsMBXA0vAFQKQwA6C3gCZA1zAr4HYgTUCUIEewyPBFYOKAVED1IGlg8xAZIOpQPvD2cDOAC6DLEP0QSgDOgK4Qv3CHcKNwqJCMcJKAkkC4UHZQjSBo8JRgVwCSYGlQq4C0UNGwoCDaUK3A3xCUYO4QqXDqgH+AwGCHcNwwj/DDoJPwwRCMsL5ARcDHMEKQ2HBf0M/QV0DZoG8QwWAooPgwLGDsIB5g5kDfANCA31DuEO9w6DBYALNwR6C4kDcwoHA1ULIQGaDWsBRw7jAZwNugKBDT8C4wydCYYOBAkiDi0I4Q07B8kNKQgjDoQGEA5PBs0NbQXoDTAE0Q2QA48N+AIhDuIDWA6cBBgO6ARRDj8NjgzHCjQPxQsSD38MzA+HA+IONwOWDooBdgxJAvwLAQL2Cj0PtgsPDu4GUA3LBrQNjwfaArYGjAKuBQUBrAbgBv8F8wUcBkIGXwa6B8QFrAiyBeUHWwW7BwYGdgrdBesJZQWXCbwFYQn9BfYKSgZDCxIG+AtXBrALzgUZBNsGEwUDBwAFZwZXA5AH4wwlBqAMmAZNDOUGEAA0CogAVAsBAYIKrAHSCaECdAlaAWUIzgaWC0MHYQzeBgADigenAZ4FCgJJBMAAdAOsAuELMQDGCmYBKwxgAXUMdAJiDXoBRQWtBdgF2AQ8BBAFwAYbBC0H3QRHCN4EUwneBGQK8QR0CyQFCwtUBO0MWQO/C3YDdgp0A6cN6wQnDYYF/Q2mBW4OUga/DqkFUgyPBcICTgTVAGgDrQ50AFEO3wH0DQED9g6UAmkPaAPvD00C6wevA7EISQQtCYED3QmFAjMENQjcA2IJPgl7AZoISwBgDoMEpQ0EBMkAMwzwAO0M9g7+BCMPRQQTAB8M2Q83BIMPfQXnDhoHYABpDekADg8BAEMAAgBDAAIARwAEAEcADgBaAA8AWgARAF8AEgBfABYAaQAIAGkAFwBtABYAbQAYAG4AFwBuABoAdgAYAHYACAB4ABsAeAAbAHoAEgB6AA8AewAaAHsAAQCAABEAgAAdAIMAHwCDACAAhgAiAIYAIwCJACUAiQAmAI0AIwCNACYAkQAoAJEAKACSACoAkgAsAJcAJQCXACAAmQAsAJkAKgCcAB8AnAAtAJ0ALgCdAC0AogAvAKIAMgCoADMAqAA0AKoANQCqACIAwwAzAMMAPQDEADQAxAA9AMkAPwDJAAQAzgAvAM4ANQDRADIA0QAuANgAQADYAEEA2QA/ANkAQQDaADwA2gA8ANsAHQDbAEAA3AAVANwADgDdABUA3QAAAEIAAABEAAEAQgBCAEMAQwBEAAIARAACAEUAAwBFAEUARgBEAEYAAwBIAEUARwBHAEgABABIAAQASQBIAEkABQBJAAUASgBJAEoASABKAAYASwBLAE0AAABLAAAATABMAE0ABwBMAAcATgBNAE4ACABOAAgATwBNAE8ABgBPAAkAUAAJAFIACgBQAFAAUQBRAFIABwBSAAAAUwBMAFMAUgBTAAkAUwADAFQARgBUAAkAVABTAFQARgBTAFUAVwALAFcADABWAFUAVgANAFYADQBXAFcAWAAKAFkAWABZAAsAWQBaAFwADgBcAA8AWwBbAFwAEABbABEAXQBdAF8ABgBdAAYAXgBdAF4AEgBeAFUAYQAMAGEACwBgAFUAYAAFAGAABQBhAAUAYgBhAGIAEwBiABMAYwBiAGMAYQBjAAwAYwAUAGQAZABmABQAZgAVAGQAFQBlAGQAZQAQAGUAEABmAGYAZwAMAGcADABoAGcAaABmAGgAFABoAGkAagAWAGoATgBpAAcAagAXAGsAFwBsAAcAawBRAGsAUQBsAAoAbABqAGsAawBtAGoAbQBuAG8AGABvAGwAbgAKAG8AWABvAA0AcABYAHAAGABwAHEAcgAZAHIAVgBxAFYAcgAMAHIAZwByABAAcwBnAHMAcgBzABkAcwBxAHUADQB1ABkAdABxAHQAGgB0ABoAdQB1AHYAcAB2AF0AdwBLAHcATwB5AAYAeQBPAHgAeAB5ABsAeQBeAHkAeQB6AF4AegB7AHwADwB8AHQAewAZAHwAcwB8AFsAfAAcAH0AfQB+ABwAfgAUAH0AaAB9AGgAfgAMAH4AYwB+ABMAfwB+AH8AHAB/AEIAdwB3AIAAHQCBAIEAgwAeAIIAgQCCAB8AggAgAIQAIQCEACEAhQCEAIUAhQCGACIAhQAjAIcAhwCJACQAhwAkAIgAiACJACUAiAAkAIoAigCMACYAigAmAIsAiwCMACcAiwCKAI0AhwCKAIcAjQAoAI4AKACQACkAjgCOAI8AjwCQACcAkACLAJEAkACRACkAkwCOAJIAkgCTACoAkwAqAJQAKwCUACsAlQCUAJUAkwCVACEAlgCWAJgAIQCYACwAlgCWAJcAlwCYACUAmACEAJYAhACZAJYAmQCCAJsAHwCbAB4AmgCaAJsAKwCaACsAmwCUAJwAmwCcAJ0AnwAuAJ4AngCfABwAngCfAKAALQCgAH8AnwATAKAAoACiABMAoQCgAKEALwChAEoAowADAKMASgBgAAsAowCjAKQACQCkAFQApABZAKQAUACkAKUApwAwAKcAMQCmAKUApgAyAKYAMgCnAKcAqAAzAKkAqACpADAAqQCqAKwANQCrAKsArAA2AKsANgCtAKwArQA3AK0ANwCuAKwArgA0AK4AmACvAIgArwAkALAArwCwADAAsAAwALEArwCxACEAsQA4ALIAsgCzADgAswAwALIAsACyACQAswCMALMAJwC0AIwAtAA4ALQAOQC1ADkAtgAnALUAjwC1AI8AtgApALYAKQC3ADoAtwC3ALgAtgC4ADoAuQC5ALoAOgC6ADcAuQCtALkANgC6ADYAuwA5ALsAuAC7ALgAugA7ALwAvAC+ADsAvgA6ALwAOgC9ALwAvQC9AL4AHgC+AB4AvwA8AL8APADAAL8AwAC+AMAAOwDAAJoAwQArAMEAmgC9AL0AwQA6AMEAtwDBAJUAtwCVAMEAsQDCAIUAwgDCAMMAqQDCAMQAxQA9AMUArgDFADcAxQDFAMcANwDGAMYAxwA+AMYAxwDJAD4AyADHAMgAPwDIADEAygAxAMwAOADKADgAywDKAMsAywDMADkAzAA2AM0AuwDNAMwAzQC1AMsAtADLAEkAzwDOAM8AoQDPAGIAzwDNANAAMQDQAKsAzQCrANAANQDQANAA0QCmANEApgDQALwA0wA6ANMAOwDSALwA0gDSANMAPgDSAD4A0wDGANMAuQDTAH0A1QAUANUAHADUAH0A1ADUANUAQADVADsA1gDSANYAQQDWANYA1wDSANcAPgDXAJ4A1ADUANgA1wDZAMgA1wClAMoApQCyALIAygDWANoAwADWAMAA2gCBAL8AgQDbAGQA1QDVANwAZADcAFwA3QBcAGUAQgBEAEQARQADAEYAAABGAEUASAADAEoABgBNAEsATAAHAE0ATgBPAFAAUgAKAFEABwBRAEwAUgALAFUADABVAFYAVwANAFgACgBYAFcAWQBaAFsAEABcAF4AXwBgAGEAZQBmABAAZwBOAGoAawBsAGwAbwBvAHAAGQBxAA0AcQB0AHUAcAB1AEsAXQARAHcAAAB3AHQAfABbAHMAYwB/AEIAgAAeAIEAggCDAIQAhgCHAIgAJACMAIoAiwAnAIwAjgCQACkAjwAnAI8AiwCQAI4AkwCTAJQAKQCVAIIAmgCUAJsALQCfAJ0AngAcAJ8AfwCgAKEAogBgAKMACwCkAFQAowBQAFkAMAClADEApQCmAKcApwCpADQArACqAKsANgCsAK0ArgAhAK8AiACYACQArwCwALEAsACzALMAtAC1ALYAtgC3ADoAuAA5ALgArQC6ALoAuwAeAL0AvgC/AIUAsQAwAMIAIgDCAKkAwwCuAMQAPQDHAMUAxgA+AMcAyADJAMoAzAA5AMsAuwDMADEAzQC0ALUABQDPAEkAzgAvAM8AYgChALkAxgBAANQAQQDXAJ4A2ADIANkAvwDbAGUA3QBSCf8OaAlIDpQJcA3aCZIMMArbC4wKVQvoCvgKQwvCCqALugr9C+IKWAw2C60MsAv8DFAMRg0UDY8N9g3ZDeoONwkODlYJOw2HCU0MzglbCyUKjwqDCvQJ4gqHCUELRgmhCzIJAgxKCWAMhQm5DN0JDQ1RClwN4gqpDYsL9w1EDBsJHg1DCS4MegkqC8MJJQobCkMJegqTCNwKFgg/C8kHowurBwcMsgdpDNUHxgwKCB4NUghyDa8IxA0gCRYOngkACS0MMAkhC2wJBwq4Ce8IEQr4B3EKMgfWCqQGPQtNBqQLIwYMDBsGcQwkBtIMNwYvDVMGiA19Bt4NtQY0DvgG5Ag8Cx0JFApfCeQIrQm5BwcKrAZpCtEF0AozBToL0ASmC5wEEQyDBHoMcwTfDGMEQA1UBJ0NSgT4DUoEUw5SBMkITAoLCQcJUgnBB6IJgwb8CWAFYApwBMoKwgM4C1MDqAsUAxYM6wKCDMMC6wyQAlENVQKzDRgCEw7fAXEOrAGpBvwOkAY1DmMGUw0cBnIMxQW6C2gFNwsLBeEKsAS1ClQEtAr4A+EKnwM5C0sDvAv+AmcMtAI0DWoCFg4hAgMPxQYPDqMGLQ1wBjYMKAZAC9AFcgpxBdgJEQVwCbIENglTBCkJ8wNFCZYDhAk/A+QJ7QJhCp4C+gpQAqQLAwJYDOAGIg22BiUMfgYYCzMGDgraBSkJegV5CBcF/ge1BLcHUQSeB+4DqQeOA88HMgMLCNsCXAiIAsAINgIyCeQBrQn8BjUMyQYdC4sG+gk+BtwI5AXhB4MFGgceBY0GtwQ4BlAEEgbpAw0GhQMaBiYDMwbKAlYGcgKFBhwCwAbGAQIHFwdIC9wGFQqZBt0ISQarB+8FmAaMBboFJAUbBbkEuQRPBIcE5ANxBH0DZQQZA1oEuQJQBFwCSwQBAk4EpwFXBDMHXArvBg0Jpga/B1UGeQb5BVAFlAVbBCoFqgO8BDoDTQT8At8D1QJ0A7ACDQOBAqgCSgJHAhEC5wHcAYkBrAEuDu8Pgw7vD9gO7w9aDi8NvA4aDh8PBQ90Di8K0w7BCjEPUguVDkMH9Q6NB1UP2AexDloEDg9iBGwPagTODnoBKw9IAYcPFQHMAe8PdwHvDyIB7w+fAT0NPAEjDtkACQ+HATkKKQHFCswAUQtjAU0HAQGZB58A5AdGAWEE5ABqBIMAdAQpAXsBygBLAWoAGgEAAAEAAAAQAAEAAgACAAMAAwAEAAQABQAFAAYABgAHAAcACAAIAAkACQAKAAoACwALAAwADAANAA0ADgAOAA8AEAAgACAAMAAwAEAAQABQAFAAUQBRAFIAUgBTAFMAVABUAFUAVQBWAFYAVwBXAFgAWABZAFkAWgBaAFsAWwBcAFwAXQBdAF4AXgBfAGAAYQBgAHAAYQBiAGIAYwBjAGQAZABlAGUAZgBmAGcAZwBoAGgAaQBpAGoAagBrAGsAbABsAG0AbQBuAG4AbwBwAIAAgACQAJAAoACgALAAsACxALEAsgCyALMAswC0ALQAtQC1ALYAtgC3ALcAuAC4ALkAuQC6ALoAuwC7ALwAvAC9AL0AvgC+AL8ADwDAAMAAwQDCAMUAwQDCAMUAyADIAMsAywDOAF8AzwDPANAAzgDRANAA0QBvANIA0gDTANQA1wDTANQA1wDaANoA3QDdAOAAvwDhAOEA4gDgAOMA4gDjAAEAEQAQABEAAgASABEAEgADABMAEgATAAQAFAATABQABQAVABQAFQAGABYAFQAWAAcAFwAWABcACAAYABcAGAAIABkAGAAZAAkAGgAZABoACgAbABoAGwALABwAGwAcAAwAHQAcAB0ADQAeAB0AHgAOAB8AHgAfABEAIQAgACEAEgAiACEAIgATACMAIgAjABQAJAAjACQAFQAlACQAJQAWACYAJQAmABcAJwAmACcAGAAoACcAKAAYACkAKAApABkAKgApACoAGgArACoAKwAbACwAKwAsABwALQAsAC0AHQAuAC0ALgAeAC8ALgAvACEAMQAwADEAIgAyADEAMgAjADMAMgAzACQANAAzADQAJQA1ADQANQAmADYANQA2ACcANwA2ADcAKAA4ADcAOAApADkAOAA5ACkAOgA5ADoAKgA7ADoAOwArADwAOwA8ACwAPQA8AD0ALQA+AD0APgAuAD8APgA/ADEAQQBAAEEAMgBCAEEAQgAzAEMAQgBDADQARABDAEQANQBFAEQARQA2AEYARQBGADcARwBGAEcAOABIAEcASAA5AEkASABJADoASgBJAEoAOgBLADsASwBKAEsAOwBMADwATABLAEwAPABNAD0ATQBMAE0APQBOAD4ATgBNAE4APgBPAD8ATwBOAE8AQQBRAEIAUgBDAFMARABUAEUAVQBGAFYARwBXAEgAWABJAFkASgBaAEsAWwBMAFwATQBdAE4AXgBPAF8AYQBxAHAAcQBiAHIAcQByAGMAcwByAHMAZAB0AHMAdABlAHUAdAB1AGYAdgB1AHYAZwB3AHYAdwBoAHgAdwB4AGgAeQB4AHkAaQB6AHkAegBqAHsAegB7AGsAfAB7AHwAbAB9AHwAfQBtAH4AfQB+AG4AfwB+AH8AcQCBAIAAgQByAIIAgQCCAHMAgwCCAIMAdACEAIMAhAB1AIUAhACFAHYAhgCFAIYAdwCHAIYAhwB4AIgAhwCIAHgAiQCIAIkAeQCKAIkAigB6AIsAigCLAHsAjACLAIwAfACNAIwAjQB9AI4AjQCOAH4AjwCOAI8AgQCRAJAAkQCCAJIAkQCSAIMAkwCSAJMAhACUAJMAlACFAJUAlACVAIYAlgCVAJYAhwCXAJYAlwCIAJgAlwCYAIkAmQCYAJkAiQCaAJkAmgCKAJsAmgCbAIsAnACbAJwAjACdAJwAnQCNAJ4AnQCeAI4AnwCeAJ8AkQChAKAAoQCSAKIAoQCiAJMAowCiAKMAlACkAKMApACVAKUApAClAJYApgClAKYAlwCnAKYApwCYAKgApwCoAJkAqQCoAKkAmgCqAKkAqgCaAKsAmwCrAKoAqwCbAKwAnACsAKsArACcAK0AnQCtAKwArQCdAK4AngCuAK0ArgCeAK8AnwCvAK4ArwChALEAogCyAKMAswCkALQApQC1AKYAtgCnALcAqAC4AKkAuQCqALoAqwC7AKwAvACtAL0ArgC+AK8AvwAPAMMAHwDDAMAAxADBAMQAwwDEAMEAxQDEAMUAHwDGAC8AxgDDAMcAxgDHAMQAyADHAMgALwDJAD8AyQDGAMoAyQDKAMcAywDKAMsAPwDMAMkAzABPAMwAyQDNAMoAzQDMAM0AygDOAM0AzgDMAM8AzQDQAG8A1QB/ANUA0gDWANMA1gDVANYA0wDXANYA1wB/ANgAjwDYANUA2QDYANkA1gDaANkA2gCPANsAnwDbANgA3ADbANwA2QDdANwA3QCfAN4A2wDeAK8A3gDbAN8A3gDfANwA4ADfAOAA3gDhAN8A4gDfAOMAAAARAAEAEgACABMAAwAUAAQAFQAFABYABgAXAAcAGAAJABkACgAaAAsAGwAMABwADQAdAA4AHgAPAB8AEAAhABEAIgASACMAEwAkABQAJQAVACYAFgAnABcAKAAZACkAGgAqABsAKwAcACwAHQAtAB4ALgAfAC8AIAAxACEAMgAiADMAIwA0ACQANQAlADYAJgA3ACcAOAAoADkAKgA6ACsAOwAsADwALQA9AC4APgAvAD8AMABBADEAQgAyAEMAMwBEADQARQA1AEYANgBHADcASAA4AEkAOQBKAEAAUQBBAFIAQgBTAEMAVABEAFUARQBWAEYAVwBHAFgASABZAEkAWgBKAFsASwBcAEwAXQBNAF4ATgBfAGAAcQBhAHIAYgBzAGMAdABkAHUAZQB2AGYAdwBnAHgAaQB5AGoAegBrAHsAbAB8AG0AfQBuAH4AbwB/AHAAgQBxAIIAcgCDAHMAhAB0AIUAdQCGAHYAhwB3AIgAeQCJAHoAigB7AIsAfACMAH0AjQB+AI4AfwCPAIAAkQCBAJIAggCTAIMAlACEAJUAhQCWAIYAlwCHAJgAiACZAIoAmgCLAJsAjACcAI0AnQCOAJ4AjwCfAJAAoQCRAKIAkgCjAJMApACUAKUAlQCmAJYApwCXAKgAmACpAJkAqgCgALEAoQCyAKIAswCjALQApAC1AKUAtgCmALcApwC4AKgAuQCpALoAqgC7AKsAvACsAL0ArQC+AK4AvwDAAMMAwwDGAMQAxwDGAMkAxwDKAE8AzwDMANAAzQDRANIA1QDVANgA1gDZANgA2wDZANwA3ADfAK8A4QDeAOIAZgmQArIJHgMZCq8DjQoyBP8KpARpCxMFzAtiBS4MVAWTDOcE+AxeBFkN3QO2DVoDDw7RAmAOVAKlDgAC4A7SAU0J4gKcCa4D+wl3BHUKKwXrCsQFWwtJBsQLpQYsDKYGlgxRBv8M3gVkDXIFxQ0KBSEOoQR1DkkEwA4UBAEP/wM0CTQDhgk+BN4JPwVcCiUG1wrkBk0LgAe8C+cHKgz4B5kMugcGDV4Hbw0IB9MNuQYyDnIGiw4+BtoOKAYiDywGGwmGA3AJzQTECQcGRAoeB8QKBAg/C7YItQsqCSgMSgmbDCMJDA3fCHkNnQjhDWgIRA5DCKEOMwj1DjwIRA9ZCAEJ2ANaCV0FsgnQBisKFwiwCiQJMQvtCa0LbAomDJwKngyMChMNXwqEDTIK8A0XClYOEwq2DigKEA9RCmUPhgroCCoERAntBZ8JmAcTChEJnQpECiMLJAulC64LJQzuC6EM9QsaDd8Ljw3IC/4NxgtoDuQLzA4dDCoPZQyGD7MMigbWAj4GWgPVBeADZwVeBPwE1wSZBEcFPwSKBeYDdgWLAxQFLAORBMoCDARoAosDCgIRA7MBqQJhAWICEgE3AqUGKANVBugD8AWlBH4FVAUPBfEFpwR4BkYEywboA8oGiAN/BiQDFAa+AqoFWQJMBfcBBgWbAeMERAHtBPAAGAXABnoDbAZ3BAwGawWVBUoGIgULB7UEqQdOBAwI6gMeCIQD6gccA5gHsgJIB0kCDgfkAfsGhAEdBygBdwfOAPgH2gbMA4MGBQUnBjEGrQVABzUFJgjDBNoIVgRNCesDcQmAA1UJFAMbCacC5gg6AtAI0QHwCGwBVgkLAQIKrADZCvUGHQSaBpMFPgb3BsQFNghJBUAJ0QQLCl4EjQrtA8UKfQPACgwDnwqbAoQKKwKRCr4B5QpVAZAL7gCMDIkAug0QB28EsQYhBlIGvAfbBSsJXAVaCuAEPAtmBM4L7wMYDHkDLAwEAyMMjwIiDBwCUwyrAdoMPQHKDdEA4Q5nAO8PGwkDAv8IFwLiCCsCxgg/AqkIUwKMCGcC0Ah2AbAITAGQCCIBcAj4AFEIzQAxCKMA1gZRAvUGZwIUB30CMgeSAlEHqAJvB74CIwfNAUUHpgFnB4ABigdZAawHMwHOBwwBAAABAAEAAgACAAMAAwAEAAQABQAFAAYABgAHAAcACAAIAAkACQAKAAoACwALAAwADAANAA0ADgAOAA8ADwAfAB8ALwAvAD8APwBPAFAAUQBRAFIAUgBTAFMAVABUAFUAVQBWAFYAVwBXAFgAWABZAFkAWgBaAFsAWwBcAFwAXQBdAF4ATwBfAF4AXwBgAGEAYQBiAGIAYwBjAGQAZABlAGUAZgBmAGcAZwBoAGgAaQBpAGoAagBrAGsAbABsAG0AbQBuAG4AbwBvAH8AfwCPAI8AnwCfAK8AsACxALEAsgCyALMAswC0ALQAtQC1ALYAtgC3ALcAuAC4ALkAuQC6ALoAuwC7ALwAvAC9AL0AvgCvAL8AvgC/AMAAxgDGAMcAAADAAMcAyADIAMkAyQDKAMUAywDKAMsAUADFAMwA0gDSANMAYADMANMA1ADUANUA1QDWANEA1wDWANcAsADRAAEAEQAQABEAAAAQAAIAEgARABIAAwATABIAEwAEABQAEwAUAAUAFQAUABUABgAWABUAFgAGABcAFgAXAAcAGAAXABgACAAZABgAGQAJABoAGQAaAAoAGwAaABsACwAcABsAHAAMAB0AHAAdAA0AHgAdAB4ADgAfAB4AHwARACEAIAAhABAAIAASACIAIQAiABMAIwAiACMAFAAkACMAJAAVACUAJAAlABYAJgAlACYAFwAnACYAJwAXACgAJwAoABgAKQAoACkAGQAqACkAKgAaACsAKgArABsALAArACwAHAAtACwALQAeAC4AHQAuAC0ALgAeAC8ALgAvACEAMQAwADEAIAAwACIAMgAxADIAIwAzADIAMwAkADQAMwA0ACUANQA0ADUAJgA2ADUANgAnADcANgA3ACcAOAA3ADgAKAA5ADgAOQApADoAOQA6ACoAOwA6ADsAKwA8ADsAPAAtAD0ALAA9ADwAPQAuAD4ALQA+AD0APgA+AD8AMQBBAEAAQQAwAEAAMgBCAEEAQgAzAEMAQgBDADQARABDAEQANQBFAEQARQA2AEYARQBGADcARwBGAEcANwBIAEcASAA4AEkASABJADkASgBJAEoAOwBLADoASwBKAEsAPABMADsATABLAEwAPQBNADwATQBMAE0APgBOAE0ATgBOAE8AQQBRAEAAUABCAFIAQwBTAEQAVABFAFUARgBWAEcAVwBIAFgASABZAEoAWgBJAFoASwBbAEoAWwBMAFwATQBdAE4AXgBhAHEAcABxAGAAcABiAHIAcQByAGMAcwByAHMAZAB0AHMAdABlAHUAdAB1AGYAdgB1AHYAZgB3AHYAdwBnAHgAdwB4AGgAeQB4AHkAaQB6AHkAegBqAHsAegB7AGsAfAB7AHwAbQB9AGwAfQB8AH0AbgB+AG0AfgB9AH4AbgB/AH4AfwBxAIEAgACBAHAAgAByAIIAgQCCAHMAgwCCAIMAdACEAIMAhAB1AIUAhACFAHYAhgCFAIYAdwCHAIYAhwB3AIgAhwCIAHgAiQCIAIkAeQCKAIkAigB6AIsAigCLAHwAjAB7AIwAiwCMAH0AjQB8AI0AjACNAH4AjgCNAI4AjgCPAIEAkQCQAJEAgACQAIIAkgCRAJIAgwCTAJIAkwCEAJQAkwCUAIUAlQCUAJUAhgCWAJUAlgCHAJcAlgCXAIcAmACXAJgAiACZAJgAmQCJAJoAmQCaAIsAmwCKAJsAmgCbAIwAnACLAJwAmwCcAI0AnQCcAJ0AjgCeAJ0AngCeAJ8AkQChAKAAoQCQAKAAkgCiAKEAogCTAKMAogCjAJQApACjAKQAlQClAKQApQCWAKYApQCmAJcApwCmAKcAlwCoAKcAqACYAKkAqACpAJoAqgCZAKoAqQCqAJsAqwCaAKsAqgCrAJwArACrAKwAnQCtAKwArQCeAK4ArQCuAK4ArwChALEAoACwAKIAsgCjALMApAC0AKUAtQCmALYApwC3AKgAuACpALkAqAC5AKoAugCpALoAqwC7AKwAvACtAL0ArgC+AMAAwQDBAMYAwQDHABAAwQDBAMIAwgDHAMIAyAAgAMIAwgDDAMMAyADDAMkAMADDAMMAxADEAMkAxADKAEAAxADEAMUAxQDKAMwAzQDNANIAzQDTAHAAzQDNAM4AzgDTAM4A1ACAAM4AzgDPAM8A1ADPANUAkADPAM8A0ADQANUA0ADWAKAA0ADQANEA0QDWAAAAEQABABIAAgATAAMAFAAEABUABQAWAAcAFwAIABgACQAZAAoAGgALABsADAAcAA0AHQAOAB4AEAAhABEAIgASACMAEwAkABQAJQAVACYAFgAnABgAKAAZACkAGgAqABsAKwAcACwAHQAtACAAMQAhADIAIgAzACMANAAkADUAJQA2ACYANwAoADgAKQA5ACoAOgArADsALAA8AC4APwAwAEEAMQBCADIAQwAzAEQANABFADUARgA2AEcAOABIADkASQA6AEoAPQBOAD4ATwBAAFEAQQBSAEIAUwBDAFQARABVAEUAVgBGAFcARwBYAEkAWQBLAFwATABdAE0AXgBOAF8AYABxAGEAcgBiAHMAYwB0AGQAdQBlAHYAZwB3AGgAeABpAHkAagB6AGsAewBsAHwAcACBAHEAggByAIMAcwCEAHQAhQB1AIYAdgCHAHgAiAB5AIkAegCKAHsAiwB9AI4AfgCPAIAAkQCBAJIAggCTAIMAlACEAJUAhQCWAIYAlwCIAJgAiQCZAIoAmgCMAJ0AjQCeAI4AnwCQAKEAkQCiAJIAowCTAKQAlAClAJUApgCWAKcAmACoAJkAqQCbAKwAnACtAJ0ArgCeAK8AoACxAKEAsgCiALMAowC0AKQAtQClALYApgC3AKcAuACqALsAqwC8AKwAvQCtAL4ArgC/ABAAwAAgAMEAMADCAEAAwwBQAMQAcADMAIAAzQCQAM4AoADPALAA0AA=";
+const bin=atob(B64),bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+const u16=new Uint16Array(bytes.buffer);let off=0;
+const P=META.map(m=>{const p=Object.assign({},m);p.v=u16.subarray(off,off+=m.nv*2);p.b=u16.subarray(off,off+=m.nb*2);p.e=u16.subarray(off,off+=m.ne*2);p.d=u16.subarray(off,off+=m.nd*2);return p});
+
+/* ---------- language ---------- */
+const NAMES={pt:['Máscara','Sobrancelhas','Cílios de cima','Cílios de baixo'],en:['Mask','Eyebrows','Upper lashes','Lower lashes']};
+const EN={
+'nav.maps':'Maps','nav.derive':'How to derive','nav.rules':'Rules','nav.guard':'Protection',
+'hero.eyebrow':'Tech pack · Mesh head · IMVU',
+'hero.lede':'Official UV maps for deriving the DRISA HEAD on IMVU. Pick a piece, style the lines your way and download at 512 × 512.',
+'spec.maps':'Maps','spec.maps.v':'4 pieces','spec.size':'Size','spec.mat':'Materials',
+'hero.cta1':'Download all 4 maps (.zip)','hero.cta2':'Open the studio','hero.tag':'Piece 01 · Mask · Mat 250','hero.hint':'Hover to read the coordinates',
+'studio.eyebrow':'Map studio','studio.h2':'Pick a piece. Style the lines your way.',
+'studio.lede':'What you see here is what lands in the file: a 512 × 512 PNG, ready to open in your editor.',
+'view.hint':'Drag to pan · double-click to zoom',
+'ctl.line':'Line color','ctl.bg':'Background','ctl.width':'Thickness','ctl.mesh':'Lines','seg.clean':'Clean','seg.all':'All',
+'ctl.tex':'Test my texture','tex.btn':'Choose image','tex.hint':'Or drop the image onto the map. It never leaves your computer.','tex.op':'Line opacity','tex.rm':'Remove texture',
+'agree':'I have read and accept the <a href="#regras">usage rules</a>',
+'dl.png':'Download PNG 512 × 512','dl.copy':'Copy image','dl.zip':'Download all 4 (.zip)',
+'derive.eyebrow':'How to derive','derive.h2':'From map to catalog in four steps.',
+'s1.t':'Download the maps','s1.p':'Accept the rules and download the four pieces at 512 × 512.',
+'s2.t':'Paint your texture','s2.p':'Use the map as a guide in your editor. Keep 512 × 512 and make both color and opacity.',
+'s3.t':'Derive in IMVU Studio','s3.p':'Derive from the DRISA HEAD product and replace the textures of the materials in the table below.',
+'s4.t':'Test and publish','s4.p':'Check it on the avatar, adjust the opacity and submit it to the catalog.',
+'th.piece':'Piece','th.size':'Size','th.tex':'Textures','m250':'Mask: face and makeup','m253':'Eyebrows','m255':'Upper lashes','m254':'Lower lashes','coa':'Color + opacity',
+'rules.eyebrow':'Usage rules','rules.h2':'The textures are yours. The mesh is mine.',
+'rules.lede':'Create and sell as much as you like on top of this head, as long as it is by derivation in the IMVU catalog.',
+'can.h':'You may','cant.h':'You may not',
+'can.1':'Derive this head through the IMVU catalog and sell your versions there.',
+'can.2':'Create and sell your own textures: mask, makeup, eyebrows and lashes.',
+'can.3':'Use the maps on this page to paint your textures.',
+'can.4':'Promote your derived products with your own images.',
+'cant.1':'Extract, copy or re-upload the mesh as .chkn, .xmf, .obj or any other format.',
+'cant.2':'Publish the mesh as your own creation or as a non-derived product.',
+'cant.3':'Sell, trade or share the mesh and its files outside the IMVU catalog.',
+'cant.4':'Use the mesh in other games or platforms.',
+'cant.5':'Edit the mesh to hide where it came from.',
+'cant.6':'Resell these maps as a pack or resource.',
+'pact.text':'By downloading the maps you agree to these rules.',
+'guard.eyebrow':'Protection','guard.h2':'Every head leaves here identified.',
+'g1.t':'Hidden signature','g1.p':'Every head carries a signature hidden inside the mesh. It does not show in the game, but it travels with the file wherever it goes.',
+'g2.t':'Authorship record','g2.p':'I keep the dated source files of the mesh. The original file has a unique fingerprint, and any copy can be checked against it.',
+'g3.t':'Point-by-point comparison','g3.p':'A suspicious mesh is compared with the original, vertex by vertex. Edited copies usually keep the same structure, and the comparison shows it.',
+'theft.eyebrow':'If it is stolen','theft.h2':'What happens to anyone who copies the mesh.',
+'t1.t':'Identification','t1.p':'The hidden signature and the mesh comparison confirm the copy.',
+'t2.t':'DMCA report','t2.p':'I send IMVU a formal copyright report with the proof of authorship.',
+'t3.t':'Product removal','t3.p':'With a valid report, IMVU removes or disables the product.',
+'t4.t':'Account at risk','t4.p':'IMVU may close accounts that repeat infringements. A permanently disabled account is unlikely to withdraw its earnings.',
+'theft.law':'I may also seek compensation in court under copyright law (Law 9.610/98 in Brazil).',
+'theft.src':'Source: IMVU DMCA FAQ',
+'foot.1':'© 2026 Drisa. Original mesh.','foot.2':'Derivation through the IMVU catalog only.'
+};
+const MSG={
+pt:{need:'Aceite as regras para liberar os downloads',ok:'Regras aceitas. Downloads liberados.',copied:'Imagem copiada',nocopy:'Seu navegador não deixou copiar. Use o botão de baixar.',saved:'Download iniciado',accept:'Aceito as regras',done:'Aceito',undo:'desfazer',tris:'triângulos',badimg:'Não consegui abrir essa imagem'},
+en:{need:'Accept the rules to unlock downloads',ok:'Rules accepted. Downloads unlocked.',copied:'Image copied',nocopy:'Your browser blocked copying. Use the download button.',saved:'Download started',accept:'I accept the rules',done:'Accepted',undo:'undo',tris:'triangles',badimg:'Could not open that image'}};
+const PT={"nav.maps": "Mapas", "nav.derive": "Como derivar", "nav.rules": "Regras", "nav.guard": "Proteção", "hero.eyebrow": "Ficha técnica · Mesh head · IMVU", "hero.lede": "Mapas UV oficiais para derivar a DRISA HEAD no IMVU. Escolha a peça, deixe as linhas do seu jeito e baixe em 512 × 512.", "spec.maps": "Mapas", "spec.maps.v": "4 peças", "spec.size": "Tamanho", "spec.mat": "Materiais", "hero.cta1": "Baixar os 4 mapas (.zip)", "hero.cta2": "Abrir o estúdio", "hero.tag": "Peça 01 · Máscara · Mat 250", "hero.hint": "Passe o cursor para ler as coordenadas", "studio.eyebrow": "Estúdio de mapas", "studio.h2": "Escolha a peça. Deixe as linhas do seu jeito.", "studio.lede": "O que aparece aqui é o que sai no arquivo: um PNG em 512 × 512, pronto para abrir no seu editor.", "view.hint": "Arraste para mover · duplo clique para zoom", "ctl.line": "Cor da linha", "ctl.bg": "Fundo", "ctl.width": "Espessura", "ctl.mesh": "Linhas", "seg.clean": "Limpas", "seg.all": "Todas", "ctl.tex": "Testar minha textura", "tex.btn": "Escolher imagem", "tex.hint": "Ou solte a imagem em cima do mapa. Ela não sai do seu computador.", "tex.op": "Opacidade das linhas", "tex.rm": "Remover textura", "agree": "Li e aceito as <a href=\"#regras\">regras de uso</a>", "dl.png": "Baixar PNG 512 × 512", "dl.copy": "Copiar imagem", "dl.zip": "Baixar os 4 (.zip)", "derive.eyebrow": "Como derivar", "derive.h2": "Do mapa ao catálogo em quatro passos.", "s1.t": "Baixe os mapas", "s1.p": "Aceite as regras e baixe as quatro peças em 512 × 512.", "s2.t": "Pinte sua textura", "s2.p": "Use o mapa como guia no seu editor. Mantenha 512 × 512 e faça a cor e a opacidade.", "s3.t": "Derive no IMVU Studio", "s3.p": "Derive do produto DRISA HEAD e troque as texturas dos materiais da tabela abaixo.", "s4.t": "Teste e publique", "s4.p": "Confira no avatar, ajuste a opacidade e envie para o catálogo.", "th.piece": "Peça", "th.size": "Tamanho", "th.tex": "Texturas", "m250": "Máscara: rosto e maquiagem", "coa": "Cor + opacidade", "m253": "Sobrancelhas", "m255": "Cílios de cima", "m254": "Cílios de baixo", "rules.eyebrow": "Regras de uso", "rules.h2": "As texturas são suas. A malha é minha.", "rules.lede": "Crie e venda o quanto quiser em cima desta cabeça, desde que seja por derivação no catálogo do IMVU.", "can.h": "Você pode", "can.1": "Derivar esta cabeça pelo catálogo do IMVU e vender as suas versões lá.", "can.2": "Criar e vender as suas próprias texturas: máscara, maquiagem, sobrancelhas e cílios.", "can.3": "Usar os mapas desta página para pintar as suas texturas.", "can.4": "Divulgar os seus produtos derivados com as suas próprias imagens.", "cant.h": "Você não pode", "cant.1": "Extrair, copiar ou reenviar a malha, em .chkn, .xmf, .obj ou qualquer outro formato.", "cant.2": "Publicar a malha como criação sua ou como produto não derivado.", "cant.3": "Vender, trocar ou distribuir a malha e os arquivos dela fora do catálogo do IMVU.", "cant.4": "Usar a malha em outros jogos ou plataformas.", "cant.5": "Editar a malha para esconder de onde ela veio.", "cant.6": "Revender estes mapas como pacote ou recurso.", "pact.text": "Ao baixar os mapas você concorda com estas regras.", "guard.eyebrow": "Proteção", "guard.h2": "Cada cabeça sai daqui identificada.", "g1.t": "Assinatura oculta", "g1.p": "Toda cabeça leva uma assinatura escondida dentro da malha. Ela não aparece no jogo, mas acompanha o arquivo para onde ele for.", "g2.t": "Registro de autoria", "g2.p": "Guardo os arquivos-fonte da malha com data. O arquivo original tem uma impressão digital única, e qualquer cópia pode ser conferida com ela.", "g3.t": "Comparação ponto a ponto", "g3.p": "Uma malha suspeita é comparada com a original, vértice por vértice. Cópias editadas costumam manter a mesma estrutura, e isso aparece na comparação.", "theft.eyebrow": "Se houver roubo", "theft.h2": "O que acontece com quem copia a malha.", "t1.t": "Identificação", "t1.p": "A assinatura oculta e a comparação de malha confirmam a cópia.", "t2.t": "Denúncia de DMCA", "t2.p": "Envio ao IMVU uma denúncia formal de direitos autorais, com as provas de autoria.", "t3.t": "Remoção do produto", "t3.p": "Com uma denúncia válida, o IMVU remove ou desativa o produto.", "t4.t": "Conta em risco", "t4.p": "O IMVU pode encerrar contas que repetem infrações. Conta desativada de vez dificilmente consegue sacar os ganhos.", "theft.law": "Também posso buscar reparação na Justiça, com base na lei de direitos autorais (Lei 9.610/98, no Brasil).", "theft.src": "Fonte: FAQ de DMCA do IMVU", "foot.1": "© 2026 Drisa. Malha original.", "foot.2": "Derivação somente pelo catálogo do IMVU."};
+let lang=store.get('drisa.lang')||'en';
+function setLang(l){lang=l;store.set('drisa.lang',l);document.documentElement.lang=l==='pt'?'pt-BR':'en';
+  const D=l==='pt'?PT:EN;$$('[data-t]').forEach(el=>{const s=D[el.dataset.t];if(s!=null)el.innerHTML=s});
+  $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===l)));
+  buildPieces();paintAccept(false);updTag();}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+/* ---------- drawing ---------- */
+function stroke(ctx,p,idx,k,n){ctx.beginPath();const v=p.v,m=n==null?idx.length:n*2;for(let i=0;i<m;i+=2){const a=idx[i]<<1,b=idx[i+1]<<1;ctx.moveTo(v[a]*k,v[a+1]*k);ctx.lineTo(v[b]*k,v[b+1]*k)}ctx.stroke()}
+function renderExport(p,o,size){size=size||512;const c=document.createElement('canvas');c.width=c.height=size;const x=c.getContext('2d');
+  if(o.bg!=='transparent'){x.fillStyle=o.bg;x.fillRect(0,0,size,size)}
+  x.strokeStyle=o.line;x.lineWidth=o.width*size/512;x.lineCap=x.lineJoin='round';const k=size/4095;
+  if(o.diag)stroke(x,p,p.d,k);stroke(x,p,p.e,k);stroke(x,p,p.b,k);return c}
+function fit(c){const w=c.clientWidth,dpr=Math.min(window.devicePixelRatio||1,2),px=Math.round(w*dpr);if(c.width!==px){c.width=px;c.height=px}return{w,dpr}}
+function thumb(c,p,color,lw){const {w,dpr}=fit(c),x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,w,w);x.strokeStyle=color;x.lineWidth=lw;stroke(x,p,p.e,w/4095);stroke(x,p,p.b,w/4095)}
+
+/* ---------- state ---------- */
+const S={piece:0,line:'#ffffff',bg:'transparent',width:1,diag:false,tex:null,wireA:1,z:1,tx:0,ty:0};
+const view=$('#view'),viewer=$('#viewer');
+function lum(hex){const n=parseInt(hex.slice(1),16);return(.299*(n>>16&255)+.587*(n>>8&255)+.114*(n&255))/255}
+function drawView(){const {w,dpr}=fit(view),x=view.getContext('2d');x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,view.width,view.height);
+  x.setTransform(dpr*S.z,0,0,dpr*S.z,dpr*S.tx,dpr*S.ty);
+  if(S.bg!=='transparent'){x.fillStyle=S.bg;x.fillRect(0,0,w,w)}
+  if(S.tex)x.drawImage(S.tex,0,0,w,w);
+  const p=P[S.piece],k=w/4095;x.strokeStyle=S.line;x.globalAlpha=S.tex?S.wireA:1;x.lineWidth=S.width*(w/512)/Math.sqrt(S.z);x.lineCap=x.lineJoin='round';
+  if(S.diag)stroke(x,p,p.d,k);stroke(x,p,p.e,k);stroke(x,p,p.b,k);x.globalAlpha=1;
+  viewer.classList.toggle('chk',S.bg==='transparent'&&!S.tex);viewer.classList.toggle('light',lum(S.line)<.45)}
+function clampView(){const w=view.clientWidth,m=w*(1-S.z);S.tx=Math.min(0,Math.max(m,S.tx));S.ty=Math.min(0,Math.max(m,S.ty))}
+function updZoom(){$('#zval').textContent=Math.round(S.z*100)+'%';view.style.touchAction=S.z>1?'none':'pan-y'}
+function zoomAt(f,cx,cy){const z=Math.min(8,Math.max(1,S.z*f)),r=z/S.z;S.tx=cx-(cx-S.tx)*r;S.ty=cy-(cy-S.ty)*r;S.z=z;clampView();updZoom();drawView()}
+function updTag(){const p=P[S.piece];$('#vtag').textContent=NAMES[lang][S.piece]+' · Mat '+p.mat+' · 512 × 512'}
+
+/* piece list */
+function buildPieces(){const box=$('#pieces');box.innerHTML='';P.forEach((p,i)=>{const b=document.createElement('button');b.type='button';b.className='piece';b.setAttribute('aria-pressed',String(i===S.piece));
+  b.innerHTML='<canvas></canvas><span><b></b><small></small><small></small></span>';
+  b.querySelector('b').textContent=NAMES[lang][i];const sm=b.querySelectorAll('small');sm[0].textContent='Mat '+p.mat+' · 512 × 512';sm[1].textContent=p.tris.toLocaleString(lang==='pt'?'pt-BR':'en-US')+' '+MSG[lang].tris;
+  b.addEventListener('click',()=>{S.piece=i;S.z=1;S.tx=S.ty=0;updZoom();$$('.piece').forEach((q,j)=>q.setAttribute('aria-pressed',String(j===i)));updTag();drawView()});
+  box.appendChild(b);thumb(b.querySelector('canvas'),p,'rgba(244,235,230,.85)',.6)})}
+
+/* controls */
+function press(group,btn){$$('.sw',group).forEach(s=>s.tagName==='BUTTON'&&s.setAttribute('aria-pressed',String(s===btn)))}
+$('#lineSw').addEventListener('click',e=>{const b=e.target.closest('button.sw');if(!b)return;S.line=b.dataset.c;press($('#lineSw'),b);drawView()});
+$('#lineAny').addEventListener('input',e=>{S.line=e.target.value;press($('#lineSw'),null);drawView()});
+$('#bgSw').addEventListener('click',e=>{const b=e.target.closest('button.sw');if(!b)return;S.bg=b.dataset.c;press($('#bgSw'),b);drawView()});
+$('#bgAny').addEventListener('input',e=>{S.bg=e.target.value;press($('#bgSw'),null);drawView()});
+$('#width').addEventListener('input',e=>{S.width=+e.target.value;$('#wval').textContent=S.width.toFixed(2).replace(/0$/,'')+' px';drawView()});
+$('#meshSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S.diag=b.dataset.d==='1';$$('#meshSeg button').forEach(q=>q.setAttribute('aria-pressed',String(q===b)));drawView()});
+$('#wireA').addEventListener('input',e=>{S.wireA=+e.target.value;$('#oval').textContent=Math.round(S.wireA*100)+'%';drawView()});
+
+/* texture test */
+function loadTex(file){if(!file||!/^image\//.test(file.type)){toast(MSG[lang].badimg);return}const url=URL.createObjectURL(file),im=new Image();
+  im.onload=()=>{S.tex=im;$('#texOn').hidden=false;drawView()};im.onerror=()=>toast(MSG[lang].badimg);im.src=url}
+$('#texFile').addEventListener('change',e=>loadTex(e.target.files[0]));
+$('#texRm').addEventListener('click',()=>{S.tex=null;$('#texOn').hidden=true;$('#texFile').value='';drawView()});
+['dragenter','dragover'].forEach(t=>viewer.addEventListener(t,e=>{e.preventDefault();viewer.classList.add('drop')}));
+['dragleave','drop'].forEach(t=>viewer.addEventListener(t,e=>{e.preventDefault();viewer.classList.remove('drop')}));
+viewer.addEventListener('drop',e=>loadTex(e.dataTransfer.files[0]));
+
+/* pan and zoom */
+const ptr=new Map();let pinch=0;
+view.addEventListener('pointerdown',e=>{ptr.set(e.pointerId,[e.offsetX,e.offsetY]);if(S.z>1||ptr.size>1)view.setPointerCapture(e.pointerId)});
+view.addEventListener('pointermove',e=>{if(!ptr.has(e.pointerId))return;const o=ptr.get(e.pointerId),n=[e.offsetX,e.offsetY];
+  if(ptr.size===1&&S.z>1){S.tx+=n[0]-o[0];S.ty+=n[1]-o[1];clampView();drawView()}
+  ptr.set(e.pointerId,n);
+  if(ptr.size===2){const a=[...ptr.values()],d=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1]);if(pinch)zoomAt(d/pinch,(a[0][0]+a[1][0])/2,(a[0][1]+a[1][1])/2);pinch=d}});
+['pointerup','pointercancel','pointerleave'].forEach(t=>view.addEventListener(t,e=>{ptr.delete(e.pointerId);if(ptr.size<2)pinch=0}));
+view.addEventListener('dblclick',e=>{if(S.z>1.01){S.z=1;S.tx=S.ty=0;updZoom();drawView()}else zoomAt(2.5,e.offsetX,e.offsetY)});
+view.addEventListener('wheel',e=>{if(!(e.ctrlKey||e.metaKey||S.z>1))return;e.preventDefault();zoomAt(e.deltaY<0?1.15:1/1.15,e.offsetX,e.offsetY)},{passive:false});
+$('.zoom').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const c=view.clientWidth/2;
+  if(b.dataset.z==='in')zoomAt(1.5,c,c);else if(b.dataset.z==='out')zoomAt(1/1.5,c,c);else{S.z=1;S.tx=S.ty=0;updZoom();drawView()}});
+
+/* ---------- rules acceptance ---------- */
+let accepted=store.get('drisa.accept');
+function paintAccept(anim){const box=$('#stampbox'),on=!!accepted;$('#agree').checked=on;
+  $$('[data-act]').forEach(b=>b.setAttribute('aria-disabled',String(!on)));
+  if(on){const d=new Date(+accepted||Date.now()),ds=d.toLocaleDateString(lang==='pt'?'pt-BR':'en-GB',{day:'2-digit',month:'short',year:'numeric'}).replace(/\./g,'');
+    box.innerHTML='<span class="stamp'+(anim?' in':'')+'"></span><button type="button" class="undo"></button>';
+    box.firstChild.textContent=MSG[lang].done+' · '+ds;box.lastChild.textContent=MSG[lang].undo;box.lastChild.onclick=()=>setAccept(false)}
+  else{box.innerHTML='<button type="button" class="btn pri"></button>';box.firstChild.textContent=MSG[lang].accept;box.firstChild.onclick=()=>setAccept(true)}}
+function setAccept(v){if(v){accepted=String(Date.now());store.set('drisa.accept',accepted);toast(MSG[lang].ok)}else{accepted=null;store.del('drisa.accept')}paintAccept(v)}
+$('#agree').addEventListener('change',e=>setAccept(e.target.checked));
+function nudge(){const row=$('#agreeRow');row.scrollIntoView({behavior:calm?'auto':'smooth',block:'center'});row.classList.remove('pulse');void row.offsetWidth;row.classList.add('pulse');toast(MSG[lang].need)}
+
+/* ---------- downloads ---------- */
+let toastT;function toast(s){const t=$('#toast');t.textContent=s;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2600)}
+const blobOf=c=>new Promise(r=>c.toBlob(r,'image/png'));
+function save(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),5000);toast(MSG[lang].saved)}
+const fname=p=>'drisa-head_'+p.slug+'_mat'+p.mat+'_512.png';
+const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+function crc32(u){let c=-1;for(let i=0;i<u.length;i++)c=CRC[(c^u[i])&255]^(c>>>8);return(c^-1)>>>0}
+function zip(files){const enc=new TextEncoder(),parts=[],cen=[];let o=0;const d=new Date(),tm=(d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1),dt=((d.getFullYear()-1980)<<9)|((d.getMonth()+1)<<5)|d.getDate();
+  for(const f of files){const nm=enc.encode(f.name),crc=crc32(f.data),n=f.data.length;
+    const h=new DataView(new ArrayBuffer(30));h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(10,tm,true);h.setUint16(12,dt,true);h.setUint32(14,crc,true);h.setUint32(18,n,true);h.setUint32(22,n,true);h.setUint16(26,nm.length,true);
+    parts.push(new Uint8Array(h.buffer),nm,f.data);
+    const c=new DataView(new ArrayBuffer(46));c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x0800,true);c.setUint16(12,tm,true);c.setUint16(14,dt,true);c.setUint32(16,crc,true);c.setUint32(20,n,true);c.setUint32(24,n,true);c.setUint16(28,nm.length,true);c.setUint32(42,o,true);
+    cen.push(new Uint8Array(c.buffer),nm);o+=30+nm.length+n}
+  let cs=0;for(const x of cen)cs+=x.length;
+  const e=new DataView(new ArrayBuffer(22));e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,cs,true);e.setUint32(16,o,true);
+  return new Blob([...parts,...cen,new Uint8Array(e.buffer)],{type:'application/zip'})}
+const README='DRISA HEAD · UV maps 512 x 512\r\n'+location.href.split('#')[0]+'\r\n\r\nMAT 250  mascara / mask\r\nMAT 253  sobrancelhas / eyebrows\r\nMAT 255  cilios de cima / upper lashes\r\nMAT 254  cilios de baixo / lower lashes\r\n\r\nPT: As texturas que voce cria sao suas. A malha e de Drisa. Derivacao somente pelo catalogo do IMVU. E proibido extrair, copiar, reenviar ou distribuir a malha, usar em outras plataformas ou revender estes mapas.\r\n\r\nEN: The textures you make are yours. The mesh belongs to Drisa. Derivation through the IMVU catalog only. Do not extract, copy, re-upload or share the mesh, use it on other platforms or resell these maps.\r\n';
+async function zipAll(o){const files=[];for(const p of P){const b=await blobOf(renderExport(p,o));files.push({name:fname(p),data:new Uint8Array(await b.arrayBuffer())})}
+  files.push({name:'LEIA-ME_README.txt',data:new TextEncoder().encode(README)});return zip(files)}
+const opts=()=>({line:S.line,bg:S.bg,width:S.width,diag:S.diag});
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-act]');if(!b)return;if(!accepted){nudge();return}
+  const p=P[S.piece],a=b.dataset.act;
+  if(a==='png')save(await blobOf(renderExport(p,opts())),fname(p));
+  else if(a==='zip')save(await zipAll(opts()),'drisa-head_mapas-uv_512.zip');
+  else if(a==='copy'){try{await navigator.clipboard.write([new ClipboardItem({'image/png':blobOf(renderExport(p,opts()))})]);toast(MSG[lang].copied)}catch(err){toast(MSG[lang].nocopy)}}});
+
+/* ---------- hero: live cutting table ---------- */
+const tc=$('#table'),tw=$('#tablewrap'),hp=P[0];
+const H={mx:0,my:0,inside:false,t0:0,rx:0,ry:0,vis:true,groups:[]};
+(function prep(){const v=hp.v;for(const [key,idx] of [['d',hp.d],['e',hp.e],['b',hp.b]]){const n=idx.length/2,ord=[];
+  for(let i=0;i<n;i++){const a=idx[2*i]<<1,b=idx[2*i+1]<<1,mx=(v[a]+v[b])/8190,my=(v[a+1]+v[b+1])/8190;ord.push([Math.hypot(mx-.5,my-.46),idx[2*i],idx[2*i+1],mx,my])}
+  ord.sort((p,q)=>p[0]-q[0]);const far=ord.length?ord[ord.length-1][0]:1,id=new Uint16Array(n*2),th=new Float32Array(n),mid=new Float32Array(n*2);
+  ord.forEach((r,i)=>{id[2*i]=r[1];id[2*i+1]=r[2];th[i]=r[0]/.72;mid[2*i]=r[3];mid[2*i+1]=r[4]});H.groups.push({key,id,th,mid,n})}})();
+function countUpTo(th,p){let lo=0,hi=th.length;while(lo<hi){const m=(lo+hi)>>1;if(th[m]<=p)lo=m+1;else hi=m}return lo}
+function heroDraw(now){const {w,dpr}=fit(tc),x=tc.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,w,w);
+  const g=Math.max(26,w*.062),s=w-g-12,k=s/4095,prog=calm?2:Math.min(2,((now-H.t0)/1500));const ease=prog>=1?2:1.45*(1-Math.pow(1-prog,3));
+  x.lineWidth=1;for(let i=0;i<=16;i++){const q=Math.round(g+s*i/16)+.5;x.strokeStyle=i%4?'rgba(244,235,230,.05)':'rgba(244,235,230,.12)';x.beginPath();x.moveTo(q,g);x.lineTo(q,g+s);x.moveTo(g,q);x.lineTo(g+s,q);x.stroke()}
+  x.fillStyle='rgba(244,235,230,.6)';x.strokeStyle='rgba(244,235,230,.5)';x.font='500 '+Math.max(9,Math.min(11,w*.019))+'px "IBM Plex Mono",monospace';
+  for(let i=0;i<=16;i++){const q=Math.round(g+s*i/16)+.5,L=i%4?4:9;x.beginPath();x.moveTo(q,g-L);x.lineTo(q,g-1);x.moveTo(g-L,q);x.lineTo(g-1,q);x.stroke();
+    if(i%4===0){x.textAlign='center';x.textBaseline='bottom';x.fillText(String(i*32),q,g-11);x.textAlign='right';x.textBaseline='middle';x.save();x.translate(g-12,q);x.rotate(-Math.PI/2);x.textAlign='center';x.textBaseline='bottom';x.fillText(String(i*32),0,0);x.restore()}}
+  let mx=H.mx,my=H.my;
+  if(!H.inside&&!calm){const t=now/1000;mx=g+s*(.5+.3*Math.cos(t*.42));my=g+s*(.47+.3*Math.sin(t*.61))}
+  const u=Math.min(1,Math.max(0,(mx-g)/s)),vv=Math.min(1,Math.max(0,(my-g)/s));
+  x.save();x.translate(g,g);x.lineCap=x.lineJoin='round';
+  const sty={d:['rgba(244,235,230,.13)',.7],e:['rgba(244,235,230,.5)',.85],b:['rgba(230,189,143,.95)',1.5]};
+  for(const G of H.groups){x.strokeStyle=sty[G.key][0];x.lineWidth=sty[G.key][1];stroke(x,hp,G.id,k,countUpTo(G.th,ease))}
+  if(prog>.5&&(H.inside||!calm)){const R=.15,near=[[],[],[]];
+    for(const G of H.groups){if(G.key==='b')continue;const lim=countUpTo(G.th,ease);for(let i=0;i<lim;i++){const dd=Math.hypot(G.mid[2*i]-u,G.mid[2*i+1]-vv);if(dd<R)near[dd<R*.45?0:dd<R*.75?1:2].push(G.id[2*i],G.id[2*i+1])}}
+    [[1,1.5],[.6,1.15],[.28,1]].forEach((a,j)=>{if(!near[j].length)return;x.strokeStyle='rgba(230,189,143,'+a[0]+')';x.lineWidth=a[1];stroke(x,hp,near[j],k)});
+    x.fillStyle='#f4ebe6';const v=hp.v;for(let i=0;i<hp.nv;i++){const dx=v[2*i]/4095-u,dy=v[2*i+1]/4095-vv;if(dx*dx+dy*dy<R*R*.2)x.fillRect(v[2*i]*k-1.5,v[2*i+1]*k-1.5,3,3)}
+    x.strokeStyle='rgba(224,74,112,.85)';x.lineWidth=1;x.beginPath();const cx=Math.round(u*s)+.5,cy=Math.round(vv*s)+.5;x.moveTo(cx,0);x.lineTo(cx,s);x.moveTo(0,cy);x.lineTo(s,cy);x.stroke()}
+  x.restore();
+  $('#ru').textContent=u.toFixed(3);$('#rv').textContent=vv.toFixed(3);$('#rx').textContent=String(Math.round(u*512)).padStart(3,'0');$('#ry').textContent=String(Math.round(vv*512)).padStart(3,'0');
+  if(!calm){const txr=H.inside?(.5-vv)*9:Math.sin(now/1900)*2.2,tyr=H.inside?(u-.5)*11:Math.cos(now/2300)*3.2;H.rx+=(txr-H.rx)*.07;H.ry+=(tyr-H.ry)*.07;tw.style.transform='rotateX('+H.rx.toFixed(2)+'deg) rotateY('+H.ry.toFixed(2)+'deg)'}}
+function loop(now){if(H.vis)heroDraw(now);if(!calm)requestAnimationFrame(loop)}
+tc.addEventListener('pointermove',e=>{H.mx=e.offsetX;H.my=e.offsetY;H.inside=true;if(calm)heroDraw(performance.now())});
+tc.addEventListener('pointerdown',e=>{H.mx=e.offsetX;H.my=e.offsetY;H.inside=true;if(calm)heroDraw(performance.now())});
+tc.addEventListener('pointerleave',()=>{H.inside=false});
+if('IntersectionObserver' in window)new IntersectionObserver(en=>{H.vis=en[0].isIntersecting}).observe(tc);
+
+/* ---------- small figures ---------- */
+function figs(){thumb($('#cmpA'),hp,'rgba(230,189,143,.9)',.6);thumb($('#cmpB'),hp,'rgba(224,74,112,.9)',.6)}
+
+/* ---------- boot ---------- */
+function redraw(){drawView();$$('.piece canvas').forEach((c,i)=>thumb(c,P[i],'rgba(244,235,230,.85)',.6));figs();if(calm)heroDraw(performance.now())}
+setLang(lang);updZoom();drawView();figs();
+H.t0=performance.now();if(calm)heroDraw(H.t0);else requestAnimationFrame(loop);
+let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{clampView();redraw()},120)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(calm)heroDraw(performance.now())});
+window.DRISA={P,renderExport,zipAll};
+})();
+</script>
+</body>
+</html>
